@@ -518,18 +518,18 @@ button {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  padding: 12px 18px;
+  padding: 14px 20px;
   background: var(--color-white);
-  border: 1px solid var(--color-gray-light);
+  border: 1px solid #111111;
   border-radius: 8px;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 .catalog-sort-info {
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   color: var(--color-gray-mid);
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -537,6 +537,7 @@ button {
 
 .catalog-sort-info strong {
   color: var(--color-black);
+  font-weight: 800;
 }
 
 .catalog-sort-box {
@@ -548,11 +549,11 @@ button {
 .sort-pills-row {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: var(--color-offwhite);
+  gap: 8px;
+  background: #f4f4f2;
   padding: 4px 6px;
   border-radius: 40px;
-  border: 1px solid var(--color-gray-light);
+  border: 1px solid #deded8;
   flex-wrap: wrap;
 }
 
@@ -561,10 +562,10 @@ button {
   align-items: center;
   gap: 5px;
   font-family: var(--font-brand);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.12em;
-  color: var(--color-gray-mid);
+  color: #111111;
   text-transform: uppercase;
   padding: 0 6px 0 8px;
 }
@@ -572,16 +573,16 @@ button {
 .sort-pill-btn {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  background: transparent;
-  border: 1px solid transparent;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #d4d4ce;
   color: var(--color-gray-dark);
   font-family: var(--font-brand);
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 7px 14px;
+  padding: 8px 16px;
   border-radius: 30px;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -589,15 +590,46 @@ button {
 }
 
 .sort-pill-btn:hover {
-  background: #ffffff;
-  color: var(--color-black);
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
 }
 
 .sort-pill-btn.active {
   background: var(--color-black);
   color: #ffffff;
   border-color: var(--color-black);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating Quick Sort Button */
+.floating-sort-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 990;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0c0d0e;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 12px 20px;
+  border-radius: 40px;
+  font-family: var(--font-brand);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.floating-sort-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  background-color: #222222;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
 @media (max-width: 768px) {
@@ -605,10 +637,10 @@ button {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
-    padding: 10px 12px;
+    padding: 12px;
   }
   .catalog-sort-info {
-    font-size: 0.76rem;
+    font-size: 0.78rem;
     text-align: center;
     justify-content: center;
   }
@@ -621,8 +653,14 @@ button {
     justify-content: center;
   }
   .sort-pill-btn {
-    font-size: 0.68rem;
-    padding: 6px 10px;
+    font-size: 0.7rem;
+    padding: 7px 11px;
+  }
+  .floating-sort-btn {
+    bottom: 20px;
+    left: 16px;
+    padding: 10px 16px;
+    font-size: 0.72rem;
   }
 }
 

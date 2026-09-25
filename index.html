@@ -151,6 +151,37 @@
       <p class="section-subtitle" id="itemCountText">Curated Streetwear & Atelier Pieces</p>
     </div>
 
+    <!-- Side Sort & Catalog Bar (High to Low, Low to High) - Prominently Displayed -->
+    <div class="catalog-sort-bar" id="catalogSortBar">
+      <div class="catalog-sort-info" id="catalogSortInfo">
+        <span>Showing Collection</span>
+      </div>
+
+      <div class="catalog-sort-box">
+        <div class="sort-pills-row">
+          <span class="catalog-sort-label">
+            <i data-lucide="arrow-up-down" style="width: 14px; height: 14px;"></i>
+            <span>SORT:</span>
+          </span>
+          <button class="sort-pill-btn active" data-sort="featured" onclick="setSort('featured')">
+            <span>Featured</span>
+          </button>
+          <button class="sort-pill-btn" data-sort="price-low-high" onclick="setSort('price-low-high')" title="Price: Low to High">
+            <i data-lucide="arrow-up-narrow-wide" style="width: 14px; height: 14px;"></i>
+            <span>Low to High</span>
+          </button>
+          <button class="sort-pill-btn" data-sort="price-high-low" onclick="setSort('price-high-low')" title="Price: High to Low">
+            <i data-lucide="arrow-down-wide-narrow" style="width: 14px; height: 14px;"></i>
+            <span>High to Low</span>
+          </button>
+          <button class="sort-pill-btn" data-sort="rating" onclick="setSort('rating')" title="Highest Rated">
+            <i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i>
+            <span>Top Rated</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Category Filter Tabs Matching Exact Spotlight Titles -->
     <div class="category-filter-tabs">
       <button class="filter-tab-btn active" data-category="all">All Items</button>
@@ -164,37 +195,6 @@
       <button class="filter-tab-btn" data-category="resort-shirts">Resort Shirts</button>
       <button class="filter-tab-btn" data-category="shorts">Shorts & Skorts</button>
       <button class="filter-tab-btn" data-category="activewear">Activewear</button>
-    </div>
-
-    <!-- Side Sort & Catalog Bar (High to Low, Low to High) -->
-    <div class="catalog-sort-bar">
-      <div class="catalog-sort-info" id="catalogSortInfo">
-        <span>Showing Collection</span>
-      </div>
-
-      <div class="catalog-sort-box">
-        <div class="sort-pills-row">
-          <span class="catalog-sort-label">
-            <i data-lucide="arrow-up-down" style="width: 13px; height: 13px;"></i>
-            <span>SORT:</span>
-          </span>
-          <button class="sort-pill-btn active" data-sort="featured" onclick="setSort('featured')">
-            <span>Featured</span>
-          </button>
-          <button class="sort-pill-btn" data-sort="price-low-high" onclick="setSort('price-low-high')" title="Price: Low to High">
-            <i data-lucide="arrow-up-narrow-wide" style="width: 13px; height: 13px;"></i>
-            <span>Low to High</span>
-          </button>
-          <button class="sort-pill-btn" data-sort="price-high-low" onclick="setSort('price-high-low')" title="Price: High to Low">
-            <i data-lucide="arrow-down-wide-narrow" style="width: 13px; height: 13px;"></i>
-            <span>High to Low</span>
-          </button>
-          <button class="sort-pill-btn" data-sort="rating" onclick="setSort('rating')" title="Highest Rated">
-            <i data-lucide="star" style="width: 12px; height: 12px;"></i>
-            <span>Top Rated</span>
-          </button>
-        </div>
-      </div>
     </div>
 
     <!-- Products Grid -->
@@ -735,6 +735,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating Quick Sort Button (Bottom Left) -->
+  <button class="floating-sort-btn" onclick="document.getElementById('catalogSortBar')?.scrollIntoView({behavior: 'smooth'})" aria-label="Sort Collection by Price">
+    <i data-lucide="arrow-up-down" style="width: 16px; height: 16px;"></i>
+    <span>SORT</span>
+  </button>
 
   <!-- Floating WhatsApp Connect Widget (Shivam Rangwani) -->
   <a href="https://wa.me/923376060956?text=Hi%20Shivam%20Rangwani,%20I%20would%20like%20to%20place%20an%20order%20with%20LEGACY." class="floating-whatsapp-btn" target="_blank" aria-label="Chat with Shivam Rangwani on WhatsApp">
