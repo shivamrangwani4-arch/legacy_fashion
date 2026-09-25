@@ -23,9 +23,8 @@
   <header class="header-wrapper" id="siteHeader">
     <div class="header-inner">
       <div class="nav-left">
-        <a href="index.html" class="pdp-back-nav" aria-label="Back to Catalog">
-          <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
-          <span>BACK</span>
+        <a href="index.html" onclick="if (window.history.length > 1) { history.back(); return false; }" class="icon-btn" aria-label="Back" title="Back">
+          <i data-lucide="arrow-left" style="width: 22px; height: 22px;"></i>
         </a>
       </div>
 
