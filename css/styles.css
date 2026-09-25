@@ -602,6 +602,37 @@ button {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Catalog Sort Trigger Button */
+.catalog-sort-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0c0d0e;
+  color: #ffffff;
+  border: 1px solid #000000;
+  padding: 10px 18px;
+  border-radius: 40px;
+  font-family: var(--font-brand);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.catalog-sort-trigger-btn:hover {
+  background-color: #22252a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.catalog-sort-trigger-btn strong {
+  color: #f1b342;
+  font-weight: 800;
+}
+
 /* Floating Quick Sort Button */
 .floating-sort-btn {
   position: fixed;
@@ -632,6 +663,182 @@ button {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
+/* Sort Bottom Sheet & Modal Backdrop */
+.sort-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1050;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.sort-modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sort-bottom-sheet {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px 20px 0 0;
+  padding: 24px 20px 32px;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.25);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sort-modal-backdrop.open .sort-bottom-sheet {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .sort-modal-backdrop {
+    align-items: center;
+  }
+  .sort-bottom-sheet {
+    border-radius: 16px;
+    transform: translateY(20px) scale(0.96);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+  .sort-modal-backdrop.open .sort-bottom-sheet {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.sort-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 18px;
+}
+
+.sort-sheet-title {
+  font-family: var(--font-brand);
+  font-size: 0.96rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #111111;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-sheet-close {
+  background: #f4f4f2;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #111111;
+  transition: all 0.2s ease;
+}
+
+.sort-sheet-close:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.sort-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sort-option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 18px;
+  background: #fafaf8;
+  border: 1.5px solid #e2e2dc;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-align: left;
+}
+
+.sort-option-btn:hover {
+  border-color: #000000;
+  background: #ffffff;
+}
+
+.sort-option-btn.active {
+  border-color: #000000;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.sort-option-btn-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sort-radio-indicator {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #888888;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.sort-option-btn.active .sort-radio-indicator {
+  border-color: #000000;
+}
+
+.sort-radio-indicator::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #000000;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.4);
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.sort-option-btn.active .sort-radio-indicator::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sort-option-name {
+  font-family: var(--font-brand);
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #111111;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+
+.sort-option-desc {
+  font-size: 0.78rem;
+  color: #666666;
+  font-weight: 500;
+}
+
 @media (max-width: 768px) {
   .catalog-sort-bar {
     flex-direction: column;
@@ -647,6 +854,10 @@ button {
   .catalog-sort-box {
     justify-content: center;
     width: 100%;
+  }
+  .catalog-sort-trigger-btn {
+    width: 100%;
+    justify-content: center;
   }
   .sort-pills-row {
     width: 100%;

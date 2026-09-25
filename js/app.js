@@ -291,6 +291,33 @@ function setCategory(category) {
   renderProductGrid();
 }
 
+function openSortModal() {
+  const modal = document.getElementById('sortModalBackdrop');
+  if (modal) {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeSortModal() {
+  const modal = document.getElementById('sortModalBackdrop');
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function applySortOption(sortType) {
+  setSort(sortType);
+  closeSortModal();
+
+  // Smooth scroll to catalog
+  const target = document.getElementById('catalogSortBar');
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
 function setSort(sortType) {
   STATE.currentSort = sortType;
 
@@ -298,6 +325,20 @@ function setSort(sortType) {
   document.querySelectorAll('.sort-pill-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-sort') === sortType);
   });
+
+  // Update sort modal options active styling
+  document.querySelectorAll('.sort-option-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-sort-val') === sortType);
+  });
+
+  // Update label on catalog bar
+  const activeSortText = document.getElementById('activeSortNameText');
+  if (activeSortText) {
+    if (sortType === 'price-low-high') activeSortText.textContent = 'Low to High';
+    else if (sortType === 'price-high-low') activeSortText.textContent = 'High to Low';
+    else if (sortType === 'rating') activeSortText.textContent = 'Top Rated';
+    else activeSortText.textContent = 'Featured';
+  }
 
   renderProductGrid();
 
