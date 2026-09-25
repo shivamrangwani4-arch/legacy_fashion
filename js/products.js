@@ -4,6 +4,172 @@
 
 const PRODUCTS_DATA = [
 {
+    "id": "leg-men-01",
+    "name": "Milano Contrast-Tipped Fine-Gauge Knit Polo",
+    "brand": "LEGACY",
+    "gender": "men",
+    "category": "knit-polos",
+    "subCategory": "polos",
+    "price": 2990,
+    "originalPrice": 3890,
+    "tag": "OLD MONEY ATELIER",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 Bestseller",
+    "rating": 5.0,
+    "reviews": 94,
+    "image": "./images/men_white_knit_tipped_polo.png",
+    "secondaryImage": "./images/men_white_knit_tipped_polo.png",
+    "colors": [
+        {
+            "name": "Pure White & Slate",
+            "code": "#f5f5f5"
+        },
+        {
+            "name": "Obsidian Black",
+            "code": "#111111"
+        }
+    ],
+    "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+    ],
+    "description": "Crafted from breathable 100% fine-gauge combed cotton. Features an open ribbed spread collar with architectural contrast tipping, paired with flared pleated dress trousers.",
+    "features": [
+        "100% Combed Fine-Gauge Cotton Knit",
+        "Contrast micro-ribbed spread collar",
+        "Tailored fit with ribbed cuffs and hem",
+        "Anti-pilling luxury yarn"
+    ]
+},
+
+{
+    "id": "leg-men-02",
+    "name": "Espresso Quarter-Zip Ribbed Knit Collar Polo",
+    "brand": "LEGACY",
+    "gender": "men",
+    "category": "knit-polos",
+    "subCategory": "polos",
+    "price": 3290,
+    "originalPrice": 4290,
+    "tag": "LUXURY ATELIER",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 Trending",
+    "rating": 5.0,
+    "reviews": 112,
+    "image": "./images/men_espresso_halfzip_polo.png",
+    "secondaryImage": "./images/men_espresso_halfzip_polo_detail.png",
+    "colors": [
+        {
+            "name": "Rich Espresso Brown",
+            "code": "#38261e"
+        },
+        {
+            "name": "Ivory Cream",
+            "code": "#f4f1ea"
+        }
+    ],
+    "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+    ],
+    "description": "Indulgent micro-ribbed knit spun in deep espresso brown. Designed with a structured mock stand collar and concealed gunmetal quarter-zip that pairs effortlessly with tailored trousers.",
+    "features": [
+        "High-density ribbed knit structure",
+        "Gunmetal matte finish half-zip pull",
+        "Stand mock collar for modern framing",
+        "Ultra-soft thermal breathable drape"
+    ]
+},
+
+{
+    "id": "leg-men-03",
+    "name": "Artisanal Hand-Embroidered Daisy Resort Camp Shirt",
+    "brand": "LEGACY",
+    "gender": "men",
+    "category": "resort-shirts",
+    "subCategory": "shirts",
+    "price": 2890,
+    "originalPrice": 3690,
+    "tag": "RESORT ATELIER",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 Limited",
+    "rating": 4.9,
+    "reviews": 73,
+    "image": "./images/men_embroidered_floral_resort.png",
+    "secondaryImage": "./images/men_embroidered_floral_resort.png",
+    "colors": [
+        {
+            "name": "Alabaster Ecru with Blue/Ochre",
+            "code": "#f0ede6"
+        },
+        {
+            "name": "Raw Linen",
+            "code": "#e6e0d3"
+        }
+    ],
+    "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+    ],
+    "description": "Bespoke textured cotton-linen blend camp-collar shirt. Adorned with tactile chain-stitched floral motifs across the chest panels with a relaxed boxy vacation drape.",
+    "features": [
+        "Tactile Chain-Stitched Floral Artwork",
+        "Breathable Linen-Cotton Weave",
+        "Relaxed Cuban Camp Collar",
+        "Natural Horn Buttons"
+    ]
+},
+
+{
+    "id": "leg-men-04",
+    "name": "Heavyweight Relaxed Atelier Tee & Pleated Tobacco Shorts Set",
+    "brand": "LEGACY",
+    "gender": "men",
+    "category": "shorts",
+    "subCategory": "shorts",
+    "price": 2690,
+    "originalPrice": 3490,
+    "tag": "STREETWEAR CO-ORD",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 Essential",
+    "rating": 4.8,
+    "reviews": 58,
+    "image": "./images/men_oversized_tee_pleated_shorts.png",
+    "secondaryImage": "./images/men_oversized_tee_pleated_shorts.png",
+    "colors": [
+        {
+            "name": "Warm Buttercream & Tobacco",
+            "code": "#eae5d8"
+        },
+        {
+            "name": "Monochrome Chalk",
+            "code": "#ffffff"
+        }
+    ],
+    "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+    ],
+    "description": "Premium 280 GSM heavyweight cotton drop-shoulder boxy tee paired with structured double-pleated tobacco cotton twill wide-leg Bermuda shorts.",
+    "features": [
+        "280 GSM Heavyweight Combed Cotton Tee",
+        "Forward Pleated Wide-Leg Bermuda Shorts",
+        "Seamless Dropped Shoulder Construction",
+        "Reinforced Deep Side Pockets"
+    ]
+},
+
+{
+
     id: "leg-denim-01",
     name: "Relaxed Japanese Selvedge Denim Trousers by LEGACY",
     brand: "LEGACY",

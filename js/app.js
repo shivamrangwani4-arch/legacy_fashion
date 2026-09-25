@@ -1,7 +1,9 @@
 // LEGACY (EST. 2026) - Main Application Controller (Dedicated Spotlight Category Routing & PKR Default)
 
 const CATEGORY_NAMES = {
-  'all': 'Categories In Focus',
+  'all': 'All Items',
+  'tops': 'Tops & Shirts',
+  'pants': 'Pants & Trousers',
   'motorsport': 'Motorsport Streetwear Racing Collection',
   'resort-shirts': 'Monochrome & Resort Vacation Shirts',
   'knit-polos': 'Textured Cable-Knit & Ribbed Polos',
@@ -193,7 +195,30 @@ function setGender(gender) {
     btn.classList.toggle('active', btn.getAttribute('data-category') === 'all');
   });
 
+  // Update Section Title & Header
+  const titleEl = document.querySelector('.section-title');
+  if (titleEl) {
+    if (gender === 'men') {
+      titleEl.textContent = "Men's Collection";
+    } else if (gender === 'women') {
+      titleEl.textContent = "Women's Atelier Collection";
+    } else if (gender === 'juniors') {
+      titleEl.textContent = "Juniors Streetwear";
+    } else {
+      titleEl.textContent = "Categories In Focus";
+    }
+  }
+
   renderProductGrid();
+
+  // Smooth scroll directly to the collection grid so the user immediately sees the filtered items
+  const target = document.getElementById('categoriesInFocus');
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  const label = gender === 'all' ? 'All Collections' : `${gender.toUpperCase()}'S COLLECTION`;
+  showToast(`Showing: ${label}`);
 }
 
 function initCategoryFilters() {
@@ -211,12 +236,16 @@ function initCategoryFilters() {
   spotlightCards.forEach(card => {
     card.addEventListener('click', () => {
       const cat = card.getAttribute('data-category');
-      STATE.currentGender = 'all'; // Reset gender filter so full category items show
       
-      // Update top gender bar active state
-      document.querySelectorAll('.gender-link').forEach(l => l.classList.remove('active'));
-      const allLink = document.querySelector('.gender-link[data-gender="all"]');
-      if (allLink) allLink.classList.add('active');
+      // If currently selected gender has items in this category, keep it; otherwise switch to all
+      const matchingInCurrent = PRODUCTS_DATA.filter(p => 
+        (STATE.currentGender === 'all' || p.gender === STATE.currentGender) && 
+        (p.category === cat || p.subCategory === cat)
+      );
+      if (matchingInCurrent.length === 0) {
+        STATE.currentGender = 'all';
+        document.querySelectorAll('.gender-link').forEach(l => l.classList.toggle('active', l.getAttribute('data-gender') === 'all'));
+      }
 
       setCategory(cat);
 
@@ -242,15 +271,20 @@ function setCategory(category) {
   // Update Section Title & Breadcrumb Banner
   const titleEl = document.querySelector('.section-title');
   if (titleEl) {
+    let genderPrefix = '';
+    if (STATE.currentGender === 'men') genderPrefix = "Men's ";
+    if (STATE.currentGender === 'women') genderPrefix = "Women's ";
+    if (STATE.currentGender === 'juniors') genderPrefix = "Juniors ";
+
     if (category === 'all') {
-      titleEl.innerHTML = `Categories In Focus`;
+      titleEl.innerHTML = genderPrefix ? `${genderPrefix}Collection` : `Categories In Focus`;
     } else {
       const titleText = CATEGORY_NAMES[category] || category.replace('-', ' ').toUpperCase();
       titleEl.innerHTML = `
         <span style="display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-          <span>${titleText}</span>
+          <span>${genderPrefix}${titleText}</span>
           <button onclick="setCategory('all')" style="font-size: 0.72rem; padding: 4px 12px; background: #0c0d0e; color: #fff; border-radius: 4px; font-weight: 700; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
-            <span>✕ View All Collections</span>
+            <span>✕ View All</span>
           </button>
         </span>
       `;
@@ -273,21 +307,34 @@ function renderProductGrid() {
 
   let products = PRODUCTS_DATA;
 
-  // Filter by gender if not 'all'
+  // Strict Filter by gender if not 'all'
   if (STATE.currentGender !== 'all') {
     products = products.filter(p => p.gender === STATE.currentGender);
   }
 
-  // Filter by category if not 'all'
+  // Filter by category
   if (STATE.currentCategory !== 'all') {
-    products = products.filter(p => p.category === STATE.currentCategory || p.subCategory === STATE.currentCategory);
+    if (STATE.currentCategory === 'tops') {
+      products = products.filter(p => 
+        ['knit-polos', 'resort-shirts', 'shirts', 'motorsport'].includes(p.category) || 
+        p.subCategory === 'shirts' || p.subCategory === 'polos'
+      );
+    } else if (STATE.currentCategory === 'pants') {
+      products = products.filter(p => 
+        ['denim', 'wideleg-pants', 'gurkha-pants', 'airflex-pants'].includes(p.category) || 
+        p.subCategory === 'trousers' || p.subCategory === 'jeans'
+      );
+    } else {
+      products = products.filter(p => p.category === STATE.currentCategory || p.subCategory === STATE.currentCategory);
+    }
   }
 
   // Count update
   const countBadge = document.getElementById('itemCountText');
   if (countBadge) {
+    const genderLabel = STATE.currentGender === 'all' ? 'All Collections' : `${STATE.currentGender.toUpperCase()}'s Collection`;
     const categoryLabel = CATEGORY_NAMES[STATE.currentCategory] || 'Items';
-    countBadge.textContent = `Showing ${products.length} Products in ${categoryLabel} · Cash on Delivery Available Across Pakistan`;
+    countBadge.textContent = `Showing ${products.length} Products in ${genderLabel} (${categoryLabel}) · Cash on Delivery Available Across Pakistan`;
   }
 
   if (products.length === 0) {
