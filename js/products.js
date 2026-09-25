@@ -106,6 +106,127 @@ const PRODUCTS_DATA = [
     features: ["Breathable Structured Cotton-Poly Twill", "Monochrome High-Contrast Racing Graphics", "Relaxed Boxy Camp Collar Fit", "Reinforced Placket"]
   },
 
+  {
+    id: "leg-fem-01",
+    name: "Sheer Tie-Front Shirt & Pleated Wide-Leg Palazzo Set",
+    brand: "LEGACY",
+    gender: "women",
+    category: "wideleg-pants",
+    subCategory: "trousers",
+    price: 3990,
+    originalPrice: 4990,
+    tag: "ATELIER CO-ORD",
+    isAiGenerated: false,
+    badge: "New Arrival · 20% OFF",
+    rating: 5.0,
+    reviews: 48,
+    image: "./images/women_sheer_palazzo_set.png",
+    secondaryImage: "./images/women_sheer_palazzo_set.png",
+    colors: [
+      { name: "Pure Chalk White", code: "#fbfbf9" },
+      { name: "Midnight Noir", code: "#111111" }
+    ],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Crafted from airy, breathable semi-sheer cotton-voile. Features a chic tie-front collar with billowing dropped sleeves, paired with architectural double-pleated wide-leg palazzo trousers with fluid movement.",
+    features: ["Airy semi-sheer premium cotton-voile", "Flowing ultra wide-leg palazzo silhouette", "Adjustable self-tie frontal closure", "Elasticated comfort back waistband"]
+  },
+  {
+    id: "leg-fem-02",
+    name: "Minimalist Atelier Sleeveless Column Midi Dress",
+    brand: "LEGACY",
+    gender: "women",
+    category: "resort-shirts",
+    subCategory: "dresses",
+    price: 3590,
+    originalPrice: 4490,
+    tag: "OLD MONEY RESORT",
+    isAiGenerated: false,
+    badge: "New Arrival · 20% OFF",
+    rating: 4.9,
+    reviews: 63,
+    image: "./images/women_minimal_atelier_dress.png",
+    secondaryImage: "./images/women_minimal_atelier_dress.png",
+    colors: [
+      { name: "Alabaster Ecru", code: "#f5f3ec" },
+      { name: "Caramel Brown", code: "#8a5738" }
+    ],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Sculpted sleeveless column silhouette with a soft gathered waistline and fluid midi-length drape. Tailored from premium dense woven crepe that resists creasing.",
+    features: ["Crease-resistant luxury crepe fabric", "Flattering gathered waist definition", "Subtle concealed side zipper", "Fluid A-line midi hemline"]
+  },
+  {
+    id: "leg-fem-03",
+    name: "Tailored Monochrome Shacket & Double-Pleated Palazzo Trousers",
+    brand: "LEGACY",
+    gender: "women",
+    category: "wideleg-pants",
+    subCategory: "trousers",
+    price: 4290,
+    originalPrice: 5390,
+    tag: "CONTEMPORARY SUITING",
+    isAiGenerated: false,
+    badge: "New Arrival · 20% OFF",
+    rating: 5.0,
+    reviews: 82,
+    image: "./images/women_monochrome_trouser_set.png",
+    secondaryImage: "./images/women_monochrome_trouser_set.png",
+    colors: [
+      { name: "Obsidian Noir", code: "#18191a" },
+      { name: "Ivory White", code: "#f8f7f4" }
+    ],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "A powerful modern minimalist ensemble featuring an oversized utility button-up shacket layered over tailored high-waisted double-pleated palazzo trousers.",
+    features: ["High-twist poly-viscose drape suiting", "Deep forward double pleats with fluid drop", "Concealed horn buttons", "Tailored deep side pockets"]
+  },
+  {
+    id: "leg-fem-04",
+    name: "Double-Breasted Relaxed Resort Blazer Shirt // BLUSH CORAL",
+    brand: "LEGACY",
+    gender: "women",
+    category: "shirts",
+    subCategory: "shirts",
+    price: 2990,
+    originalPrice: 3750,
+    tag: "SUMMER ATELIER",
+    isAiGenerated: false,
+    badge: "New Arrival · 20% OFF",
+    rating: 4.8,
+    reviews: 39,
+    image: "./images/women_blush_resort_blazer.png",
+    secondaryImage: "./images/women_blush_resort_blazer.png",
+    colors: [
+      { name: "Blush Coral Rose", code: "#f2bcbb" },
+      { name: "Cream White", code: "#fbfbf7" }
+    ],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Sophisticated camp-collar double-breasted shirt cut in an airy crinkle textured weave. Features rolled cuffed short sleeves and tonal horn buttons.",
+    features: ["Crinkle textured lightweight weave", "Double-breasted lapel styling", "Cuffed short sleeves with relaxed drop", "Side split hem for easy styling"]
+  },
+  {
+    id: "leg-fem-05",
+    name: "Bohemian Ruffled High-Slit Duster Tunic & Fluid Trouser Set",
+    brand: "LEGACY",
+    gender: "women",
+    category: "wideleg-pants",
+    subCategory: "trousers",
+    price: 3790,
+    originalPrice: 4750,
+    tag: "RESORT CO-ORD",
+    isAiGenerated: false,
+    badge: "New Arrival · 20% OFF",
+    rating: 4.9,
+    reviews: 51,
+    image: "./images/women_ruffled_tunic_palazzo.png",
+    secondaryImage: "./images/women_ruffled_tunic_palazzo.png",
+    colors: [
+      { name: "Cotton White & Olive", code: "#4a4939" },
+      { name: "All White", code: "#ffffff" }
+    ],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "An ethereal two-piece silhouette featuring a romantic ruffle-trimmed high-slit tunic overlay paired with pooling olive brown wide-leg palazzo trousers.",
+    features: ["Delicate micro-ruffle placket detail", "Dramatic center-front high slit", "Full-length pooling wide-leg pants", "Soft breathable natural cotton lawn"]
+  },
+
 {
     id: "leg-gurk-01",
     name: "Double-Buckle Gurkha Trousers // SMART FIT",

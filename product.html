@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEGACY (EST. 2026) | Product Details</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syncopate:wght@700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Announcement Bar with Pakistani Currency & Cash on Delivery Notice -->
+  <div class="announcement-bar">
+    <div style="width: 80px;"></div>
+    <div class="announcement-text">
+      FREE EXPRESS DELIVERY ACROSS PAKISTAN ON ORDERS OVER RS. 3,500 | CASH ON DELIVERY (COD) AVAILABLE
+    </div>
+    <div class="currency-selector">
+      <select id="currencySelect" aria-label="Select Currency">
+        <option value="PKR" selected>PKR (Rs.)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="GBP">GBP (£)</option>
+        <option value="AED">AED</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="header-wrapper" id="siteHeader">
+    <div class="header-inner">
+      <div class="nav-left">
+        <a href="index.html" class="pdp-back-nav" aria-label="Back to Catalog">
+          <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
+          <span>BACK</span>
+        </a>
+      </div>
+
+      <div class="brand-logo-container">
+        <a href="index.html" class="brand-logo">LEGACY</a>
+        <span class="brand-est">EST. 2026</span>
+      </div>
+
+      <div class="nav-right">
+        <a href="index.html#categoriesInFocus" class="icon-btn" aria-label="Catalog">
+          <i data-lucide="grid" style="width: 20px; height: 20px;"></i>
+        </a>
+        <button class="icon-btn" id="openCartBtn" aria-label="View Shopping Bag">
+          <i data-lucide="shopping-bag" style="width: 20px; height: 20px;"></i>
+          <span class="cart-count-badge" id="cartCountBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Detail Page Main Container -->
+  <main class="pdp-page-container">
+    <!-- Breadcrumb Nav -->
+    <nav class="pdp-breadcrumb-nav" id="pdpBreadcrumbs">
+      <a href="index.html">HOME</a>
+      <span class="pdp-breadcrumb-separator">/</span>
+      <span id="breadcrumbGender">COLLECTION</span>
+      <span class="pdp-breadcrumb-separator">/</span>
+      <span id="breadcrumbTitle" style="color: var(--color-black);">PRODUCT DETAILS</span>
+    </nav>
+
+    <!-- Two-Column Product Layout -->
+    <div class="pdp-layout-grid">
+      <!-- Left Column: Gallery -->
+      <div class="pdp-gallery-wrap">
+        <div class="pdp-main-image-box" id="pdpImageBox">
+          <span class="pdp-floating-badge pdp-discount-tag" id="pdpFloatingBadge">NEW ARRIVAL</span>
+          <button class="pdp-wishlist-float" id="pdpWishlistBtn" aria-label="Wishlist">
+            <i data-lucide="heart" style="width: 20px; height: 20px; stroke: #000; fill: none;"></i>
+          </button>
+          <img id="pdpMainImage" src="" alt="LEGACY Product Image">
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="pdp-thumb-list" id="pdpThumbList"></div>
+      </div>
+
+      <!-- Right Column: Purchasing Info -->
+      <div class="pdp-info-panel">
+        <div class="pdp-category-tag" id="pdpMetaTag">LEGACY ATELIER</div>
+        <h1 class="pdp-product-title" id="pdpProductTitle">Product Title</h1>
+
+        <div class="pdp-rating-meta">
+          <span class="pdp-rating-stars">
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: #ff9900; stroke: none;"></i>
+            <span id="pdpRatingVal">5.0</span>
+          </span>
+          <span class="pdp-reviews-count" id="pdpReviewsText">(50 Verified Reviews)</span>
+          <span style="color: #137333; font-weight: 700; font-size: 0.76rem; margin-left: 6px;">● In Stock Ready for Dispatch</span>
+        </div>
+
+        <!-- Pricing Section -->
+        <div class="pdp-pricing-box">
+          <div class="pdp-price-row">
+            <span class="pdp-price-current" id="pdpPriceCurrent">Rs. 0</span>
+            <span class="pdp-price-original" id="pdpPriceOriginal">Rs. 0</span>
+            <span class="pdp-discount-pill" id="pdpDiscountPill">20% OFF</span>
+          </div>
+          <p class="pdp-tax-notice">Price inclusive of all sales taxes · Free Express Shipping across Pakistan on Rs. 3,500+</p>
+        </div>
+
+        <!-- Color Swatches -->
+        <div class="pdp-section-block">
+          <div class="pdp-section-header">
+            <span>Color: <strong id="pdpActiveColorName">Default</strong></span>
+          </div>
+          <div class="pdp-swatches-row" id="pdpSwatchesRow"></div>
+        </div>
+
+        <!-- Size Options -->
+        <div class="pdp-section-block">
+          <div class="pdp-section-header">
+            <span>Size: <strong id="pdpActiveSizeName">Select Size</strong></span>
+            <button onclick="alert('Standard Pakistan & International Streetwear Sizing.\n\nXS: Chest 36-38 | Waist 28-30\nS: Chest 38-40 | Waist 30-32\nM: Chest 40-42 | Waist 32-34\nL: Chest 42-44 | Waist 34-36\nXL: Chest 44-46 | Waist 36-38\n\nAll items crafted with signature relaxed luxury drape.')" style="color: #666; font-size: 0.75rem; text-decoration: underline; cursor: pointer;">
+              Size Guide
+            </button>
+          </div>
+          <div class="pdp-sizes-row" id="pdpSizesRow"></div>
+        </div>
+
+        <!-- Quantity & CTA Buttons -->
+        <div class="pdp-cta-group">
+          <div class="pdp-qty-stepper">
+            <button class="pdp-qty-btn" id="pdpQtyDec" aria-label="Decrease quantity">−</button>
+            <span class="pdp-qty-display" id="pdpQtyVal">1</span>
+            <button class="pdp-qty-btn" id="pdpQtyInc" aria-label="Increase quantity">+</button>
+          </div>
+
+          <button class="pdp-btn-primary" id="pdpAddToCartBtn">
+            <i data-lucide="shopping-bag" style="width: 18px; height: 18px;"></i>
+            <span>Add to Bag</span>
+          </button>
+
+          <button class="pdp-btn-cod" id="pdpBuyCodBtn">
+            <i data-lucide="truck" style="width: 18px; height: 18px;"></i>
+            <span>Cash on Delivery</span>
+          </button>
+        </div>
+
+        <!-- Perks & Trust -->
+        <div class="pdp-perks-container">
+          <div class="pdp-perk-item">
+            <i data-lucide="truck" style="width: 18px; height: 18px; color: #111;"></i>
+            <span><strong>Free Express Shipping</strong> across Pakistan on orders over Rs. 3,500</span>
+          </div>
+          <div class="pdp-perk-item">
+            <i data-lucide="banknote" style="width: 18px; height: 18px; color: #111;"></i>
+            <span><strong>Cash on Delivery (COD)</strong> available in all cities nationwide</span>
+          </div>
+          <div class="pdp-perk-item">
+            <i data-lucide="refresh-cw" style="width: 18px; height: 18px; color: #111;"></i>
+            <span><strong>7 Days Easy Exchange</strong> & Hassle-free Customer Care</span>
+          </div>
+          <div class="pdp-perk-item">
+            <i data-lucide="shield-check" style="width: 18px; height: 18px; color: #111;"></i>
+            <span><strong>100% Authentic LEGACY Craftsmanship</strong> & Dense Tailored Fit</span>
+          </div>
+        </div>
+
+        <!-- Accordions -->
+        <div class="pdp-accordion-group">
+          <div class="pdp-acc-row active">
+            <button class="pdp-acc-trigger">
+              <span>Product Description & Silhouette</span>
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+            </button>
+            <div class="pdp-acc-panel">
+              <p id="pdpDescriptionText"></p>
+            </div>
+          </div>
+
+          <div class="pdp-acc-row">
+            <button class="pdp-acc-trigger">
+              <span>Fabric & Atelier Craftsmanship</span>
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+            </button>
+            <div class="pdp-acc-panel">
+              <ul id="pdpFeaturesList" style="padding-left: 20px; list-style-type: disc;"></ul>
+            </div>
+          </div>
+
+          <div class="pdp-acc-row">
+            <button class="pdp-acc-trigger">
+              <span>Nationwide Shipping & Returns</span>
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+            </button>
+            <div class="pdp-acc-panel">
+              <p>All orders are processed and dispatched within 24 hours from our Karachi atelier. Standard delivery arrives in 2-4 business days via TCS & Trax Logistics across Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, and all other nationwide locations. Cash on Delivery (COD) accepted upon doorstep parcel handover.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <section class="pdp-related-section">
+      <h2 class="pdp-related-title">Curated Complementary Pieces</h2>
+      <div class="products-grid" id="pdpRelatedGrid"></div>
+    </section>
+  </main>
+
+  <!-- Slide-Out Shopping Bag Drawer -->
+  <div class="drawer-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="display: flex; align-items: baseline; gap: 8px;">
+        <h3 style="font-family: var(--font-brand); text-transform: uppercase; font-size: 1.1rem;">Shopping Bag</h3>
+        <span style="font-size: 0.8rem; color: var(--color-gray-mid);">EST. 2026</span>
+      </div>
+      <button id="closeCartBtn" aria-label="Close Bag">
+        <i data-lucide="x" style="width: 22px; height: 22px;"></i>
+      </button>
+    </div>
+
+    <div class="cart-free-shipping-bar">
+      <p class="free-shipping-text" id="freeShippingText">
+        Add <strong>Rs. 3,500</strong> more for <strong>FREE EXPRESS DELIVERY IN PAKISTAN</strong>
+      </p>
+      <div class="shipping-progress-track">
+        <div class="shipping-progress-fill" id="shippingProgressFill"></div>
+      </div>
+    </div>
+
+    <div class="cart-items-list" id="cartItemsList"></div>
+
+    <div class="cart-footer">
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">Rs. 0</strong>
+      </div>
+      <div class="cart-summary-row">
+        <span>Shipping (Pakistan)</span>
+        <span style="color: #137333; font-weight: 600;">FREE over Rs. 3,500</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Estimated Total</span>
+        <span id="cartTotal">Rs. 0</span>
+      </div>
+
+      <button class="checkout-btn" id="cartCheckoutBtn">
+        Proceed to Checkout (COD Available)
+      </button>
+    </div>
+  </aside>
+
+  <!-- Simulated Checkout Modal with Pakistani Cities & Cash On Delivery -->
+  <div class="modal-backdrop" id="checkoutModal">
+    <div class="quickview-card" style="max-width: 650px; display: block; padding: 36px 30px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 1px solid var(--color-gray-light); padding-bottom: 14px;">
+        <div class="brand-logo-container" style="align-items: flex-start;">
+          <span class="brand-logo" style="font-size: 1.5rem;">LEGACY</span>
+          <span class="brand-est">PAKISTAN EXPRESS CHECKOUT</span>
+        </div>
+        <button id="closeCheckoutBtn" aria-label="Close Checkout">
+          <i data-lucide="x" style="width: 22px; height: 22px;"></i>
+        </button>
+      </div>
+
+      <form id="checkoutForm">
+        <h4 style="font-family: var(--font-brand); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 12px;">Customer & Delivery Details</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+          <input type="text" required placeholder="Full Name" style="padding: 10px 14px; border: 1px solid var(--color-gray-light); border-radius: 2px;">
+          <input type="tel" required placeholder="Mobile Number (e.g. 0300-1234567)" style="padding: 10px 14px; border: 1px solid var(--color-gray-light); border-radius: 2px;">
+        </div>
+        <input type="email" required placeholder="Email Address for Order Tracking" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-gray-light); border-radius: 2px; margin-bottom: 12px;">
+        <input type="text" required placeholder="Complete Street Address / House / Flat No." style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-gray-light); border-radius: 2px; margin-bottom: 12px;">
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+          <select required style="padding: 10px 14px; border: 1px solid var(--color-gray-light); border-radius: 2px; background: #fff; font-size: 0.85rem;">
+            <option value="">Select City in Pakistan</option>
+            <option value="Karachi">Karachi</option>
+            <option value="Lahore">Lahore</option>
+            <option value="Islamabad">Islamabad</option>
+            <option value="Rawalpindi">Rawalpindi</option>
+            <option value="Faisalabad">Faisalabad</option>
+            <option value="Multan">Multan</option>
+            <option value="Peshawar">Peshawar</option>
+            <option value="Quetta">Quetta</option>
+            <option value="Sialkot">Sialkot</option>
+            <option value="Gujranwala">Gujranwala</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Other">Other Nationwide City</option>
+          </select>
+          <input type="text" placeholder="Postal Code" style="padding: 10px 14px; border: 1px solid var(--color-gray-light); border-radius: 2px;">
+        </div>
+
+        <h4 style="font-family: var(--font-brand); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 12px;">Payment Method</h4>
+        <div style="border: 1px solid var(--color-gray-light); border-radius: 2px; padding: 14px; margin-bottom: 24px; background: var(--color-offwhite);">
+          <label style="display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 700; cursor: pointer; margin-bottom: 8px;">
+            <input type="radio" name="paymentMethod" checked>
+            <span>Cash on Delivery (COD) - Pay when your parcel arrives</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 500; cursor: pointer; color: #555;">
+            <input type="radio" name="paymentMethod">
+            <span>JazzCash / EasyPaisa / Online Card Payment</span>
+          </label>
+        </div>
+
+        <button type="submit" class="checkout-btn" style="background-color: #137333;">
+          Confirm Order with Cash on Delivery (COD)
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="footer-inner">
+      <div>
+        <h4 class="footer-col-title">LEGACY EST. 2026</h4>
+        <p style="font-size: 0.82rem; color: #9da0a8; line-height: 1.7; margin-bottom: 20px;">
+          Architectural silhouettes, tactile knits, and contemporary streetwear tailored with bespoke craftsmanship in Pakistan.
+        </p>
+      </div>
+      <div>
+        <h4 class="footer-col-title">COLLECTIONS</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html#men">Men's FW26</a></li>
+          <li><a href="index.html#women">Women's Atelier</a></li>
+          <li><a href="index.html#juniors">Juniors Streetwear</a></li>
+          <li><a href="index.html">All 34 Products</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">ASSISTANCE</h4>
+        <ul class="footer-links-list">
+          <li><a href="#">Track Nationwide Delivery</a></li>
+          <li><a href="#">Cash on Delivery Guide</a></li>
+          <li><a href="#">7-Day Returns & Exchanges</a></li>
+          <li><a href="#">WhatsApp: +92 300 0000000</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">ATELIER PRIVILEGE</h4>
+        <p style="font-size: 0.8rem; color: #9da0a8;">Subscribe to receive secret lookbook drops & exclusive seasonal access.</p>
+        <div class="footer-newsletter-input">
+          <input type="email" placeholder="Enter your email...">
+          <button type="button">JOIN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div>© 2026 LEGACY. ALL RIGHTS RESERVED. DESIGNED FOR PAKISTAN & WORLDWIDE ATELIER.</div>
+      <div>KARACHI · LAHORE · ISLAMABAD</div>
+    </div>
+  </footer>
+
+  <script src="./js/products.js"></script>
+  <script src="./js/pdp.js"></script>
+</body>
+</html>

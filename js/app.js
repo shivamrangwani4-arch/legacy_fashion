@@ -310,10 +310,10 @@ function renderProductGrid() {
       : '';
 
     return `
-      <div class="product-card" data-id="${product.id}">
+      <div class="product-card" data-id="${product.id}" onclick="openProductPage('${product.id}')" style="cursor: pointer;">
         <div class="product-image-container">
           ${badgeMarkup}
-          <button class="product-wishlist-btn ${isFav ? 'active' : ''}" onclick="toggleWishlist('${product.id}', event)">
+          <button class="product-wishlist-btn ${isFav ? 'active' : ''}" onclick="event.stopPropagation(); toggleWishlist('${product.id}', event)">
             <i data-lucide="heart" style="width: 17px; height: 17px; fill: ${isFav ? '#e63946' : 'none'};"></i>
           </button>
           
@@ -321,11 +321,11 @@ function renderProductGrid() {
           ${product.secondaryImage ? `<img src="${product.secondaryImage}" alt="${product.name}" loading="lazy" class="product-image-secondary">` : ''}
 
           <div class="product-quick-actions">
-            <button class="quick-action-btn" onclick="quickAddToCart('${product.id}')">
+            <button class="quick-action-btn" onclick="event.stopPropagation(); quickAddToCart('${product.id}')">
               Quick Add
             </button>
-            <button class="quick-view-trigger" onclick="openQuickView('${product.id}')" title="Quick View">
-              <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+            <button class="quick-view-trigger" onclick="event.stopPropagation(); openProductPage('${product.id}')" title="View Full Page">
+              <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
             </button>
           </div>
         </div>
@@ -339,7 +339,7 @@ function renderProductGrid() {
             </span>
           </div>
 
-          <h3 class="product-name" onclick="openQuickView('${product.id}')" style="cursor: pointer;">
+          <h3 class="product-name">
             ${product.name}
           </h3>
 
@@ -357,6 +357,11 @@ function renderProductGrid() {
   }).join('');
 
   lucide.createIcons();
+}
+
+// Direct Navigation to dedicated Product Page
+function openProductPage(id) {
+  window.location.href = `product.html?id=${encodeURIComponent(id)}`;
 }
 
 // ----------------------------------------------------
@@ -656,6 +661,9 @@ function openQuickView(productId) {
           <i data-lucide="heart" style="width: 16px; height: 16px;"></i>
         </button>
       </div>
+      <button class="hero-cta-btn" style="width: 100%; margin-top: 10px; justify-content: center; background: #fff; color: #000; border: 1.5px solid #000; font-size: 0.76rem;" onclick="openProductPage('${product.id}')">
+        Open Full Product Page →
+      </button>
     </div>
   `;
 
@@ -794,7 +802,7 @@ function handleSearch(query) {
   }
 
   resultsContainer.innerHTML = results.map(product => `
-    <div class="product-card" onclick="openQuickView('${product.id}'); document.getElementById('searchOverlay').classList.remove('open');" style="cursor: pointer;">
+    <div class="product-card" onclick="openProductPage('${product.id}'); document.getElementById('searchOverlay').classList.remove('open');" style="cursor: pointer;">
       <div class="product-image-container">
         <img src="${product.image}" alt="${product.name}" onerror="this.src='https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80'">
       </div>
