@@ -18,7 +18,7 @@ const CATEGORY_NAMES = {
 
 // State Management
 const STATE = {
-  currentGender: 'all', // Show all by default so spotlight cards show complete matching collections
+  currentGender: 'men', // Only MEN, WOMEN, JUNIORS (No ALL)
   currentCategory: 'all',
   cart: JSON.parse(localStorage.getItem('legacy_cart') || '[]'),
   wishlist: JSON.parse(localStorage.getItem('legacy_wishlist') || '[]'),
@@ -37,43 +37,27 @@ const STATE = {
   freeShippingThreshold: 3500 // Free shipping in Pakistan on orders over Rs. 3,500
 };
 
-// Hero Slides Data
+// Hero Slides Data (Tailored for MEN, WOMEN, JUNIORS)
 const HERO_SLIDES = [
   {
-    title: "FW 2026-2027",
-    subtitle: "The New Streetwear Silhouette",
-    cta: "Shop FW26 Collection",
+    title: "LEGACY MEN // FW26",
+    subtitle: "Atelier Knit Polos & Architectural Tailoring",
+    cta: "Shop Men's Collection",
     image: "./images/hero_slide_1.jpg",
-    gender: "all",
-    category: "shirts"
+    gender: "men",
+    category: "all"
   },
   {
-    title: "Season Preview F/W 26-27",
-    subtitle: "Architectural Denim Atelier",
+    title: "LEGACY WOMEN // FW26",
+    subtitle: "Fluid Palazzo Sets & Minimalist Dresses",
     cta: "Explore Women's Drop",
     image: "./images/hero_slide_2.jpg",
     gender: "women",
-    category: "denim"
+    category: "all"
   },
   {
-    title: "Season Preview F/W 26-27",
-    subtitle: "Tactile Knitwear & Signet Archive",
-    cta: "Discover Knit Polos",
-    image: "./images/hero_slide_detail.jpg",
-    gender: "all",
-    category: "knit-polos"
-  },
-  {
-    title: "LEGACY ORIGINALS",
-    subtitle: "Airflex & Double-Buckle Gurkha Trousers",
-    cta: "Shop Gurkha Series",
-    image: "./images/hero_slide_3.jpg",
-    gender: "all",
-    category: "gurkha-pants"
-  },
-  {
-    title: "BETWEEN SEASONS",
-    subtitle: "Legacy Juniors · FW26 Editorial Campaign",
+    title: "LEGACY JUNIORS // FW26",
+    subtitle: "Between Seasons Editorial Archive",
     cta: "Explore Juniors Collection",
     image: "./images/juniors_campaign_ad.png",
     gender: "juniors",
@@ -189,6 +173,9 @@ function initGenderNavigation() {
 }
 
 function setGender(gender) {
+  if (!['men', 'women', 'juniors'].includes(gender)) {
+    gender = 'men';
+  }
   STATE.currentGender = gender;
   STATE.currentCategory = 'all';
 
@@ -212,8 +199,6 @@ function setGender(gender) {
       titleEl.textContent = "Women's Atelier Collection";
     } else if (gender === 'juniors') {
       titleEl.textContent = "Juniors Collection · Between Seasons";
-    } else {
-      titleEl.textContent = "Categories In Focus";
     }
   }
 
@@ -225,8 +210,7 @@ function setGender(gender) {
     target.scrollIntoView({ behavior: 'smooth' });
   }
 
-  const label = gender === 'all' ? 'All Collections' : `${gender.toUpperCase()}'S COLLECTION`;
-  showToast(`Showing: ${label}`);
+  showToast(`Showing: ${gender.toUpperCase()}'S COLLECTION`);
 }
 
 function initCategoryFilters() {
@@ -245,14 +229,18 @@ function initCategoryFilters() {
     card.addEventListener('click', () => {
       const cat = card.getAttribute('data-category');
       
-      // If currently selected gender has items in this category, keep it; otherwise switch to all
+      // If currently selected gender has items in this category, keep it; otherwise switch to gender that has it
       const matchingInCurrent = PRODUCTS_DATA.filter(p => 
-        (STATE.currentGender === 'all' || p.gender === STATE.currentGender) && 
-        (p.category === cat || p.subCategory === cat)
+        p.gender === STATE.currentGender && (p.category === cat || p.subCategory === cat)
       );
       if (matchingInCurrent.length === 0) {
-        STATE.currentGender = 'all';
-        document.querySelectorAll('.gender-link').forEach(l => l.classList.toggle('active', l.getAttribute('data-gender') === 'all'));
+        const found = PRODUCTS_DATA.find(p => p.category === cat || p.subCategory === cat);
+        if (found) {
+          STATE.currentGender = found.gender;
+          document.querySelectorAll('.gender-link, .drawer-gender-tab').forEach(l => 
+            l.classList.toggle('active', l.getAttribute('data-gender') === found.gender)
+          );
+        }
       }
 
       setCategory(cat);
@@ -315,25 +303,10 @@ function renderProductGrid() {
 
   let products = PRODUCTS_DATA;
 
-  // Strict Filter by gender if not 'all'
-  if (STATE.currentGender !== 'all') {
-    products = products.filter(p => p.gender === STATE.currentGender);
-  }
-
-  // Ensure that in 'all' view with 'all' category, the 4 iconic catalog starter items remain #1 - #4
-  if (STATE.currentGender === 'all' && STATE.currentCategory === 'all') {
-    const starterIds = ['leg-denim-01', 'leg-polo-01', 'leg-wide-01', 'leg-moto-01'];
-    const starters = [];
-    const others = [];
-    starterIds.forEach(id => {
-      const it = products.find(p => p.id === id);
-      if (it) starters.push(it);
-    });
-    products.forEach(p => {
-      if (!starterIds.includes(p.id)) others.push(p);
-    });
-    products = [...starters, ...others];
-  }
+  // Strict Filter by gender: MEN, WOMEN, or JUNIORS ONLY (No ALL)
+  const activeGender = ['men', 'women', 'juniors'].includes(STATE.currentGender) ? STATE.currentGender : 'men';
+  STATE.currentGender = activeGender;
+  products = products.filter(p => p.gender === activeGender);
 
   // Filter by category
   if (STATE.currentCategory !== 'all') {
@@ -355,7 +328,7 @@ function renderProductGrid() {
   // Count update
   const countBadge = document.getElementById('itemCountText');
   if (countBadge) {
-    const genderLabel = STATE.currentGender === 'all' ? 'All Collections' : `${STATE.currentGender.toUpperCase()}'s Collection`;
+    const genderLabel = `${STATE.currentGender.toUpperCase()}'s Collection`;
     const categoryLabel = CATEGORY_NAMES[STATE.currentCategory] || 'Items';
     countBadge.textContent = `Showing ${products.length} Products in ${genderLabel} (${categoryLabel}) · Cash on Delivery Available Across Pakistan`;
   }
@@ -365,8 +338,8 @@ function renderProductGrid() {
       <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
         <i data-lucide="package-search" style="width: 48px; height: 48px; color: #a0a09e; margin-bottom: 16px;"></i>
         <h3 style="font-family: var(--font-brand); text-transform: uppercase;">No Items Found in this Selection</h3>
-        <p style="color: var(--color-gray-mid); font-size: 0.9rem; margin-top: 6px;">Try switching categories or explore all collections.</p>
-        <button class="hero-cta-btn" style="margin-top: 20px;" onclick="setCategory('all'); setGender('all');">View All Items (30+)</button>
+        <p style="color: var(--color-gray-mid); font-size: 0.9rem; margin-top: 6px;">Try switching categories or explore the full collection.</p>
+        <button class="hero-cta-btn" style="margin-top: 20px;" onclick="setCategory('all');">View Full Collection</button>
       </div>
     `;
     lucide.createIcons();
@@ -1014,14 +987,21 @@ function processOrder() {
           <i data-lucide="check-circle" style="width: 36px; height: 36px;"></i>
         </div>
         <h2 style="font-family: var(--font-brand); text-transform: uppercase; font-size: 1.5rem; margin-bottom: 10px;">Order Confirmed!</h2>
-        <p style="font-size: 0.9rem; color: var(--color-gray-mid); margin-bottom: 20px;">
-          Shukriya for choosing <strong>LEGACY (EST. 2026)</strong>.<br>
+        <p style="font-size: 0.9rem; color: var(--color-gray-mid); margin-bottom: 16px;">
+          Shukriya for choosing <strong>LEGACY BY SHIVAM RANGWANI</strong>.<br>
+          WhatsApp / Helpline Support: <strong>03376060956</strong><br>
           Tracking Reference: <strong>#${orderNum}</strong> (Cash on Delivery / Express Courier)
         </p>
         <p style="font-size: 0.8rem; color: #666; margin-bottom: 24px;">
-          Your parcel has been dispatched from the Lahore Atelier. Expected delivery across Pakistan: 2-3 business days.
+          Your parcel has been dispatched from the Karachi & Lahore Atelier. Expected delivery across Pakistan: 2-3 business days.
         </p>
-        <button class="hero-cta-btn" onclick="location.reload()">Continue Exploring</button>
+        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://wa.me/923376060956?text=Hi%20Shivam%20Rangwani,%20I%20just%20placed%20order%20%23${orderNum}" class="pdp-btn-whatsapp" target="_blank" style="text-decoration: none; padding: 12px 20px;">
+            <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
+            <span>Track on WhatsApp (03376060956)</span>
+          </a>
+          <button class="hero-cta-btn" onclick="location.reload()">Continue Exploring</button>
+        </div>
       </div>
     `;
     lucide.createIcons();

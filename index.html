@@ -22,7 +22,7 @@
   <!-- Announcement Bar with Pakistani Free Delivery & COD Notice -->
   <div class="announcement-bar">
     <div class="announcement-text">
-      FREE EXPRESS DELIVERY ACROSS PAKISTAN ON ORDERS OVER RS. 3,500 | CASH ON DELIVERY (COD) AVAILABLE NATIONWIDE
+      LEGACY BY SHIVAM RANGWANI | 24/7 WHATSAPP ORDERS: 03376060956 | FREE DELIVERY OVER RS. 3,500 | CASH ON DELIVERY NATIONWIDE
     </div>
   </div>
 
@@ -38,10 +38,10 @@
         </button>
       </div>
 
-      <!-- Center: Brand Logo (EST. 2026) -->
+      <!-- Center: Brand Logo (LEGACY by Shivam Rangwani) -->
       <div class="brand-logo-container">
-        <a href="#" class="brand-logo" onclick="setCategory('all'); setGender('all'); return false;">LEGACY</a>
-        <span class="brand-est">EST. 2026</span>
+        <a href="index.html" class="brand-logo" onclick="setCategory('all'); setGender('men'); return false;">LEGACY</a>
+        <span class="brand-est">BY SHIVAM RANGWANI · EST. 2026</span>
       </div>
 
       <!-- Right: Search, Wishlist, Bag -->
@@ -49,7 +49,7 @@
         <button class="icon-btn" id="searchTriggerBtn" aria-label="Search Catalog">
           <i data-lucide="search" style="width: 20px; height: 20px;"></i>
         </button>
-        <button class="icon-btn" onclick="filterBySlide('all', 'all'); document.getElementById('categoriesInFocus').scrollIntoView({behavior: 'smooth'});" aria-label="Wishlist">
+        <button class="icon-btn" onclick="setCategory('all'); document.getElementById('categoriesInFocus').scrollIntoView({behavior: 'smooth'});" aria-label="Wishlist">
           <i data-lucide="heart" style="width: 20px; height: 20px;"></i>
           <span class="cart-count-badge" id="wishlistCountBadge" style="background-color: #3b3c40;">0</span>
         </button>
@@ -60,10 +60,9 @@
       </div>
     </div>
 
-    <!-- Gender Nav Subbar (ALL | MEN | WOMEN | JUNIORS) -->
+    <!-- Gender Nav Subbar (MEN | WOMEN | JUNIORS ONLY - Clear & Professional) -->
     <nav class="gender-nav" id="genderNav">
-      <a href="#all" class="gender-link active" data-gender="all">ALL</a>
-      <a href="#men" class="gender-link" data-gender="men">MEN</a>
+      <a href="#men" class="gender-link active" data-gender="men">MEN</a>
       <a href="#women" class="gender-link" data-gender="women">WOMEN</a>
       <a href="#juniors" class="gender-link" data-gender="juniors">JUNIORS</a>
     </nav>
@@ -140,46 +139,6 @@
         <img src="./images/junior_boy_resort_streetwear.png" alt="Juniors Streetwear">
         <div class="spotlight-card-overlay">
           <span class="spotlight-card-title">JUNIORS</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- High-Impact Editorial Campaign Advertisement Section -->
-  <section class="campaign-editorial-section" id="campaignEditorialSection">
-    <div class="campaign-editorial-card">
-      <div class="campaign-editorial-media">
-        <img src="./images/juniors_campaign_ad.png" alt="Legacy Juniors Between Seasons Editorial Campaign" class="campaign-editorial-img">
-        <div class="campaign-editorial-badge">CAMPAIGN ARCHIVE · FW26</div>
-      </div>
-      <div class="campaign-editorial-content">
-        <span class="campaign-eyebrow">LEGACY JUNIORS ATELIER</span>
-        <h2 class="campaign-headline">BETWEEN SEASONS</h2>
-        <p class="campaign-description">
-          An intimate editorial exploration of everyday youth sophistication. Premium combed cotton jerseys, tailored shackets, and soft enzyme-washed wide-leg denim engineered for unrestrained comfort and timeless modern streetwear aesthetics.
-        </p>
-        <div class="campaign-perks">
-          <div class="campaign-perk-item">
-            <i data-lucide="sparkles" style="width: 15px; height: 15px;"></i>
-            <span>100% Combed Pure Cotton</span>
-          </div>
-          <div class="campaign-perk-item">
-            <i data-lucide="tag" style="width: 15px; height: 15px;"></i>
-            <span>Flat 20% OFF Launch Promo</span>
-          </div>
-          <div class="campaign-perk-item">
-            <i data-lucide="shield-check" style="width: 15px; height: 15px;"></i>
-            <span>Cash on Delivery Nationwide</span>
-          </div>
-        </div>
-        <div class="campaign-cta-group">
-          <button class="btn-campaign-primary" onclick="setGender('juniors')">
-            <span>EXPLORE JUNIORS COLLECTION</span>
-            <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
-          </button>
-          <button class="btn-campaign-secondary" onclick="openProductPage('leg-jun-01')">
-            <span>VIEW RUNWAY LOOK</span>
-          </button>
         </div>
       </div>
     </div>
@@ -262,12 +221,11 @@
       </button>
     </div>
 
-    <!-- Drawer Gender Tabs (ALL | MEN | WOMEN | JUNIORS) -->
-    <div class="drawer-gender-tabs" style="grid-template-columns: repeat(4, 1fr);">
-      <button class="drawer-gender-tab active" data-gender="all">ALL</button>
-      <button class="drawer-gender-tab" data-gender="men">MEN</button>
+    <!-- Drawer Gender Tabs (MEN | WOMEN | JUNIORS ONLY) -->
+    <div class="drawer-gender-tabs" style="grid-template-columns: repeat(3, 1fr);">
+      <button class="drawer-gender-tab active" data-gender="men">MEN</button>
       <button class="drawer-gender-tab" data-gender="women">WOMEN</button>
-      <button class="drawer-gender-tab" data-gender="juniors">JRS</button>
+      <button class="drawer-gender-tab" data-gender="juniors">JUNIORS</button>
     </div>
 
     <div class="drawer-menu-content">
@@ -503,17 +461,205 @@
   <!-- Toast Container -->
   <div class="toast-container" id="toastContainer"></div>
 
+  <!-- Scrolling Instagram Community Reviews Showcase -->
+  <section class="insta-reviews-section" id="instaReviewsSection">
+    <div class="insta-reviews-header">
+      <div class="insta-brand-tag">
+        <i data-lucide="instagram" style="width: 18px; height: 18px; color: #e1306c;"></i>
+        <span>@LEGACY.ATELIER // INSTAGRAM COMMUNITY</span>
+      </div>
+      <h2 class="insta-reviews-title">CLIENT STORIES ACROSS PAKISTAN</h2>
+      <p class="insta-reviews-sub">
+        Real buyer reviews from Karachi, Lahore, Islamabad, Jacobabad & nationwide. Tag us to be featured.
+      </p>
+    </div>
+
+    <!-- Infinite Auto-Scrolling Track (Marquee) -->
+    <div class="insta-scroll-container">
+      <div class="insta-scroll-track" id="instaScrollTrack">
+        <!-- Review 1 -->
+        <div class="insta-card">
+          <div class="insta-card-top">
+            <div class="insta-user-info">
+              <span class="insta-avatar">HK</span>
+              <div>
+                <div class="insta-handle">@hamza_khalid26 <i data-lucide="check-circle" class="verified-icon"></i></div>
+                <div class="insta-city">Karachi · Verified Buyer</div>
+              </div>
+            </div>
+            <i data-lucide="instagram" class="insta-card-icon"></i>
+          </div>
+          <div class="insta-stars">★★★★★</div>
+          <p class="insta-comment">
+            "The Milano fine-gauge knit polo is unreal quality! Handfeel is identical to international luxury brands. Fast COD delivery in 2 days."
+          </p>
+          <div class="insta-product-tag">Wore: Milano Knit Polo</div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="insta-card">
+          <div class="insta-card-top">
+            <div class="insta-user-info">
+              <span class="insta-avatar">ZS</span>
+              <div>
+                <div class="insta-handle">@zainab.sheikh.style <i data-lucide="check-circle" class="verified-icon"></i></div>
+                <div class="insta-city">Lahore · Verified Buyer</div>
+              </div>
+            </div>
+            <i data-lucide="instagram" class="insta-card-icon"></i>
+          </div>
+          <div class="insta-stars">★★★★★</div>
+          <p class="insta-comment">
+            "Ordered the tailored shacket and wide palazzo trousers. The silhouette drape and double-pleated cut are pure perfection. Highly recommend!"
+          </p>
+          <div class="insta-product-tag">Wore: Monochrome Shacket Set</div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="insta-card">
+          <div class="insta-card-top">
+            <div class="insta-user-info">
+              <span class="insta-avatar">BA</span>
+              <div>
+                <div class="insta-handle">@bilal.ahmed_ <i data-lucide="check-circle" class="verified-icon"></i></div>
+                <div class="insta-city">Jacobabad · Verified Buyer</div>
+              </div>
+            </div>
+            <i data-lucide="instagram" class="insta-card-icon"></i>
+          </div>
+          <div class="insta-stars">★★★★★</div>
+          <p class="insta-comment">
+            "Received my parcel directly in Jacobabad via Cash on Delivery! The Espresso Quarter-Zip Polo is 10/10. Shivam Rangwani did great work."
+          </p>
+          <div class="insta-product-tag">Wore: Espresso Quarter-Zip Polo</div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="insta-card">
+          <div class="insta-card-top">
+            <div class="insta-user-info">
+              <span class="insta-avatar">FL</span>
+              <div>
+                <div class="insta-handle">@fatima_lifestyle <i data-lucide="check-circle" class="verified-icon"></i></div>
+                <div class="insta-city">Islamabad · Verified Buyer</div>
+              </div>
+            </div>
+            <i data-lucide="instagram" class="insta-card-icon"></i>
+          </div>
+          <div class="insta-stars">★★★★★</div>
+          <p class="insta-comment">
+            "Got the Daisy embroidered baggy wide-leg jeans for my kid. Super comfortable pure cotton denim. The Juniors sizing guide was spot on!"
+          </p>
+          <div class="insta-product-tag">Wore: Daisy Wide-Leg Denim</div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="insta-card">
+          <div class="insta-card-top">
+            <div class="insta-user-info">
+              <span class="insta-avatar">DS</span>
+              <div>
+                <div class="insta-handle">@daniyal_streetwear <i data-lucide="check-circle" class="verified-icon"></i></div>
+                <div class="insta-city">Rawalpindi · Verified Buyer</div>
+              </div>
+            </div>
+            <i data-lucide="instagram" class="insta-card-icon"></i>
+          </div>
+          <div class="insta-stars">★★★★★</div>
+          <p class="insta-comment">
+            "The Selvedge Denim cut is heavyweight, structured and falls cleanly over sneakers. Best streetwear brand coming out of Pakistan in 2026."
+          </p>
+          <div class="insta-product-tag">Wore: Selvedge Denim Trousers</div>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="insta-card">
+          <div class="insta-card-top">
+            <div class="insta-user-info">
+              <span class="insta-avatar">AR</span>
+              <div>
+                <div class="insta-handle">@ayesha.rehman_ <i data-lucide="check-circle" class="verified-icon"></i></div>
+                <div class="insta-city">Faisalabad · Verified Buyer</div>
+              </div>
+            </div>
+            <i data-lucide="instagram" class="insta-card-icon"></i>
+          </div>
+          <div class="insta-stars">★★★★★</div>
+          <p class="insta-comment">
+            "Reached out on WhatsApp 03376060956 for size assistance and received a response within minutes. Seamless ordering experience and lovely packaging."
+          </p>
+          <div class="insta-product-tag">Wore: Atelier Column Midi Dress</div>
+        </div>
+
+        <!-- Repeated loop for infinite seamless scroll -->
+        <div class="insta-card">
+          <div class="insta-card-top">
+            <div class="insta-user-info">
+              <span class="insta-avatar">HK</span>
+              <div>
+                <div class="insta-handle">@hamza_khalid26 <i data-lucide="check-circle" class="verified-icon"></i></div>
+                <div class="insta-city">Karachi · Verified Buyer</div>
+              </div>
+            </div>
+            <i data-lucide="instagram" class="insta-card-icon"></i>
+          </div>
+          <div class="insta-stars">★★★★★</div>
+          <p class="insta-comment">
+            "The Milano fine-gauge knit polo is unreal quality! Handfeel is identical to international luxury brands. Fast COD delivery in 2 days."
+          </p>
+          <div class="insta-product-tag">Wore: Milano Knit Polo</div>
+        </div>
+
+        <div class="insta-card">
+          <div class="insta-card-top">
+            <div class="insta-user-info">
+              <span class="insta-avatar">BA</span>
+              <div>
+                <div class="insta-handle">@bilal.ahmed_ <i data-lucide="check-circle" class="verified-icon"></i></div>
+                <div class="insta-city">Jacobabad · Verified Buyer</div>
+              </div>
+            </div>
+            <i data-lucide="instagram" class="insta-card-icon"></i>
+          </div>
+          <div class="insta-stars">★★★★★</div>
+          <p class="insta-comment">
+            "Received my parcel directly in Jacobabad via Cash on Delivery! The Espresso Quarter-Zip Polo is 10/10. Shivam Rangwani did great work."
+          </p>
+          <div class="insta-product-tag">Wore: Espresso Quarter-Zip Polo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp Quick Contact Bar -->
+    <div class="insta-whatsapp-bar">
+      <div class="insta-wa-text">
+        <strong>Need Personal Styling or Quick WhatsApp Order?</strong>
+        <span>Connect directly with Shivam Rangwani · Phone & WhatsApp: 03376060956</span>
+      </div>
+      <a href="https://wa.me/923376060956?text=Hi%20Shivam%20Rangwani,%20I%20am%20interested%20in%20ordering%20from%20LEGACY." target="_blank" class="btn-insta-whatsapp">
+        <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
+        <span>WhatsApp: 03376060956</span>
+      </a>
+    </div>
+  </section>
+
   <!-- Global Footer -->
   <footer class="footer-section">
     <div class="footer-inner">
       <div>
         <div class="brand-logo-container" style="align-items: flex-start; margin-bottom: 16px;">
           <span class="brand-logo" style="font-size: 2rem;">LEGACY</span>
-          <span class="brand-est">EST. 2026 · PAKISTAN</span>
+          <span class="brand-est">BY SHIVAM RANGWANI · EST. 2026</span>
         </div>
         <p style="font-size: 0.85rem; color: #a4a7b0; line-height: 1.7; max-width: 320px;">
-          Redefining Pakistani streetwear with honest pricing, Airflex innovation, architectural Gurkha tailoring, and heavy cotton graphic tees.
+          Redefining Pakistani streetwear with architectural tailoring, pure fine-gauge knits, and Japanese-washed denim. Creative Direction by Shivam Rangwani.
         </p>
+        <div style="margin-top: 14px;">
+          <a href="https://wa.me/923376060956" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; color: #25d366; font-weight: 700; font-size: 0.85rem; text-decoration: none;">
+            <i data-lucide="phone" style="width: 16px; height: 16px;"></i>
+            <span>Call / WhatsApp: 03376060956</span>
+          </a>
+        </div>
       </div>
 
       <div>
@@ -522,18 +668,19 @@
           <li><a href="#" onclick="setGender('men'); return false;">Men's Streetwear</a></li>
           <li><a href="#" onclick="setGender('women'); return false;">Women's Atelier</a></li>
           <li><a href="#" onclick="setGender('juniors'); return false;">Juniors Archive</a></li>
-          <li><a href="#" onclick="setCategory('pants-gurkhas'); return false;">Airflex & Gurkha Pants</a></li>
-          <li><a href="#" onclick="setCategory('shirts'); return false;">Motorsport & Resort Shirts</a></li>
+          <li><a href="#" onclick="setCategory('tops'); return false;">Tops & Knit Polos</a></li>
+          <li><a href="#" onclick="setCategory('pants'); return false;">Denim & Wide Leg Pants</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="footer-col-title">Client Care</h4>
+        <h4 class="footer-col-title">Client Care & Orders</h4>
         <ul class="footer-links-list">
+          <li><a href="https://wa.me/923376060956" target="_blank">Direct WhatsApp: 03376060956</a></li>
+          <li><a href="tel:03376060956">Direct Phone: 03376060956</a></li>
           <li><a href="#" onclick="showToast('Free Express Shipping across Pakistan on orders over Rs. 3,500.'); return false;">Free Shipping in Pakistan</a></li>
           <li><a href="#" onclick="showToast('Cash on Delivery available nationwide in 2-3 business days.'); return false;">Cash on Delivery (COD)</a></li>
           <li><a href="#" onclick="showToast('7-Day Easy Exchange Policy across Pakistan.'); return false;">7-Day Easy Exchange</a></li>
-          <li><a href="#" onclick="showToast('Legacy Support: WhatsApp 0300-LEGACY-26'); return false;">WhatsApp Support</a></li>
         </ul>
       </div>
 
@@ -542,7 +689,7 @@
         <p style="font-size: 0.8rem; color: #9da0a8; margin-bottom: 12px;">
           Get notified for exclusive flash drops, discount vouchers & restocks.
         </p>
-        <form class="footer-newsletter-input" onsubmit="event.preventDefault(); showToast('Welcome to LEGACY VIP! Use voucher LEGACY2026 for 20% off.'); this.reset();">
+        <form class="footer-newsletter-input" onsubmit="event.preventDefault(); showToast('Welcome to LEGACY VIP! Contact Shivam Rangwani on WhatsApp 03376060956.'); this.reset();">
           <input type="email" required placeholder="Enter email address">
           <button type="submit">JOIN</button>
         </form>
@@ -550,14 +697,21 @@
     </div>
 
     <div class="footer-bottom-bar">
-      <span>© 2026 LEGACY PAKISTAN. ALL RIGHTS RESERVED. ACADEMY SHOWCASE EDITION.</span>
+      <span>© 2026 LEGACY BY SHIVAM RANGWANI · ALL RIGHTS RESERVED · ACADEMY SHOWCASE</span>
       <div style="display: flex; gap: 20px;">
-        <a href="#" onclick="showToast('Delivery in 2-3 Days'); return false;">DELIVERY</a>
-        <a href="#" onclick="showToast('Cash on Delivery'); return false;">COD INFO</a>
-        <a href="#" onclick="showToast('WhatsApp Support: 0300-LEGACY'); return false;">WHATSAPP</a>
+        <a href="https://wa.me/923376060956" target="_blank" style="color: #25d366; font-weight: 700;">WHATSAPP: 03376060956</a>
+        <a href="#" onclick="showToast('Cash on Delivery Nationwide'); return false;">COD INFO</a>
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Connect Widget (Shivam Rangwani) -->
+  <a href="https://wa.me/923376060956?text=Hi%20Shivam%20Rangwani,%20I%20would%20like%20to%20place%20an%20order%20with%20LEGACY." class="floating-whatsapp-btn" target="_blank" aria-label="Chat with Shivam Rangwani on WhatsApp">
+    <div class="wa-tooltip">Chat with Shivam Rangwani · 03376060956</div>
+    <svg class="wa-icon-svg" viewBox="0 0 24 24" width="28" height="28" fill="#ffffff">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
 
   <!-- Scripts -->
   <script src="./js/products.js"></script>

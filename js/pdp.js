@@ -52,7 +52,7 @@ function initProductPage() {
   PDP_STATE.selectedSize = p.sizes[0] || 'Standard';
   PDP_STATE.activeImage = p.image;
 
-  document.title = `${p.name} | LEGACY (EST. 2026)`;
+  document.title = `${p.name} | LEGACY BY SHIVAM RANGWANI (EST. 2026)`;
 
   // Breadcrumbs
   const bGender = document.getElementById('breadcrumbGender');
@@ -94,6 +94,9 @@ function initProductPage() {
   // Sizes
   renderSizes();
 
+  // Update WhatsApp direct order URL
+  updateWhatsAppOrderLink();
+
   // Quantity Stepper
   const qtyVal = document.getElementById('pdpQtyVal');
   const decBtn = document.getElementById('pdpQtyDec');
@@ -104,6 +107,7 @@ function initProductPage() {
       if (PDP_STATE.quantity > 1) {
         PDP_STATE.quantity--;
         if (qtyVal) qtyVal.textContent = PDP_STATE.quantity;
+        updateWhatsAppOrderLink();
       }
     };
   }
@@ -111,6 +115,7 @@ function initProductPage() {
     incBtn.onclick = () => {
       PDP_STATE.quantity++;
       if (qtyVal) qtyVal.textContent = PDP_STATE.quantity;
+      updateWhatsAppOrderLink();
     };
   }
 
@@ -235,6 +240,7 @@ function selectColor(colorName) {
   document.querySelectorAll('.pdp-swatch-circle').forEach(sw => {
     sw.classList.toggle('active', sw.title === colorName);
   });
+  updateWhatsAppOrderLink();
 }
 
 function renderSizes() {
@@ -262,6 +268,17 @@ function selectSize(size) {
   document.querySelectorAll('.pdp-size-chip').forEach(chip => {
     chip.classList.toggle('active', chip.textContent.trim() === size);
   });
+  updateWhatsAppOrderLink();
+}
+
+function updateWhatsAppOrderLink() {
+  const p = PDP_STATE.product;
+  if (!p) return;
+  const waBtn = document.getElementById('pdpWhatsAppBtn');
+  if (!waBtn) return;
+
+  const msg = `Hi Shivam Rangwani, I would like to order from LEGACY:\n\n• Product: ${p.name}\n• Price: Rs. ${p.price.toLocaleString()}\n• Size: ${PDP_STATE.selectedSize || 'Standard'}\n• Color: ${PDP_STATE.selectedColor || 'Standard'}\n• Quantity: ${PDP_STATE.quantity}\n\nPlease confirm availability and dispatch for Cash on Delivery (COD).`;
+  waBtn.href = `https://wa.me/923376060956?text=${encodeURIComponent(msg)}`;
 }
 
 function openSizeGuideModal() {
@@ -530,7 +547,7 @@ function initCheckoutFlow() {
   if (form) {
     form.onsubmit = (e) => {
       e.preventDefault();
-      alert(`🎉 ORDER CONFIRMED!\n\nThank you for choosing LEGACY (EST. 2026).\nYour parcel has been booked for nationwide dispatch with Cash on Delivery (COD).\nEstimated arrival: 2-4 business days via Express Courier.`);
+      alert(`🎉 ORDER CONFIRMED!\n\nThank you for choosing LEGACY BY SHIVAM RANGWANI.\nYour parcel has been booked for nationwide dispatch with Cash on Delivery (COD).\nOrder helpline & WhatsApp: 03376060956\nEstimated arrival: 2-4 business days via Express Courier.`);
       PDP_STATE.cart = [];
       localStorage.setItem('legacy_cart', JSON.stringify(PDP_STATE.cart));
       updateCartUI();
