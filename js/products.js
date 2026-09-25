@@ -1294,30 +1294,6 @@ const PRODUCTS_DATA = [
   },
 
 {
-    id: "leg-shkt-03",
-    name: "Juniors 'LEGACY 2026' Varsity Bomber Jacket",
-    brand: "LEGACY",
-    gender: "juniors",
-    category: "shirts",
-    subCategory: "shirts",
-    price: 3290,
-    originalPrice: 4290,
-    tag: "JUNIORS SIGNATURE",
-    badge: "Hero Piece",
-    rating: 5.0,
-    reviews: 95,
-    image: "./images/juniors_varsity_jacket.jpg",
-    secondaryImage: "./images/juniors_varsity_jacket_detail.jpg",
-    colors: [
-      { name: "Varsity Navy & Cream", code: "#1f2f4d" },
-      { name: "Forest Green & White", code: "#294334" }
-    ],
-    sizes: ["8-9Y", "10-11Y", "12-13Y", "14-15Y"],
-    description: "Collegiate heritage reimagined for the youth. Features custom chenille 'L' embroidery on the chest, supple vegan leather sleeves, and striped ribbed collar.",
-    features: ["Heavy wool-blend body", "Supple vegan leather sleeves", "Chenille 'L26' chest patch", "Snap button front closure"]
-  },
-
-{
     id: "leg-shrt-01",
     name: "Tactical Bungee Nylon Cargo Shorts",
     brand: "LEGACY",
@@ -1363,78 +1339,6 @@ const PRODUCTS_DATA = [
     sizes: ["XS", "S", "M", "L"],
     description: "Sharp knife pleats merged with tactical side cargo pockets. Features built-in stretch inner shorts for active confidence all day.",
     features: ["Integrated modesty inner shorts", "Accordion cargo pockets with d-ring", "Heavy cotton twill build", "Side zip closure"]
-  },
-
-{
-    id: "leg-shrt-03",
-    name: "Juniors Utility Multi-Pocket Cargo Shorts",
-    brand: "LEGACY",
-    gender: "juniors",
-    category: "shorts",
-    subCategory: "shorts",
-    price: 1590,
-    originalPrice: 2190,
-    tag: "STREET CULTURE",
-    badge: "Hot Drop",
-    rating: 4.8,
-    reviews: 64,
-    image: "./images/juniors_cargo_shorts.jpg",
-    secondaryImage: "./images/juniors_cargo_shorts_detail.jpg",
-    colors: [
-      { name: "Camo Green", code: "#4c5943" },
-      { name: "Stone", code: "#c9c2b1" }
-    ],
-    sizes: ["8-9Y", "10-11Y", "12-13Y", "14-15Y"],
-    description: "Built for adventure. Multiple bellowed cargo pockets with velcro flaps and a comfortable elastic drawstring waistband.",
-    features: ["Rugged cotton ripstop", "Drawstring elastic waist", "6 functional storage pockets", "Knee-length streetwear cut"]
-  },
-
-{
-    id: "leg-act-01",
-    name: "Juniors Overdyed Heavy French Terry Hoodie",
-    brand: "LEGACY",
-    gender: "juniors",
-    category: "activewear",
-    subCategory: "t-shirts",
-    price: 2490,
-    originalPrice: 3290,
-    tag: "STREETWEAR",
-    badge: "Top Pick",
-    rating: 4.9,
-    reviews: 112,
-    image: "./images/juniors_street_hoodie.jpg",
-    secondaryImage: "./images/juniors_street_hoodie_detail.jpg",
-    colors: [
-      { name: "Pigment Washed Charcoal", code: "#303030" },
-      { name: "Vintage Pine", code: "#293a2c" }
-    ],
-    sizes: ["8-9Y", "10-11Y", "12-13Y", "14-15Y"],
-    description: "400 GSM custom French terry fleece with no scratchy drawstrings. Clean double-layered hood with subtle tonal 'LEGACY' embroidery on the cuff.",
-    features: ["400 GSM 100% French Terry Cotton", "Kangaroo hand-warmer pocket", "Double-layered crossover hood", "Pre-shrunk vintage dye"]
-  },
-
-{
-    id: "leg-act-02",
-    name: "Juniors Bungee Parachute Cargo Pants // BLACK",
-    brand: "LEGACY",
-    gender: "juniors",
-    category: "wideleg-pants",
-    subCategory: "trousers",
-    price: 2390,
-    originalPrice: 3190,
-    tag: "STREETWEAR VIRAL",
-    badge: "Trending",
-    rating: 4.9,
-    reviews: 86,
-    image: "./images/juniors_parachute_pants.jpg",
-    secondaryImage: "./images/juniors_parachute_pants_detail.jpg",
-    colors: [
-      { name: "Obsidian Black", code: "#141414" },
-      { name: "Tactical Charcoal", code: "#2e2e2e" }
-    ],
-    sizes: ["8-9Y", "10-11Y", "12-13Y", "14-15Y"],
-    description: "Trending baggy parachute cargo pants for juniors with adjustable ankle toggle bungees, elastic waist, and 3D utility cargo pockets.",
-    features: ["Featherlight crinkle tech ripstop", "Adjustable bungee toggle ankles", "Dual accordion cargo pockets", "Elastic waistband with safety drawstring"]
   },
 
 {
