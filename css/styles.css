@@ -2288,5 +2288,198 @@ button {
     height: 48px;
   }
 }
+/* ====================================================
+   EDITORIAL CAMPAIGN ADVERTISEMENT SHOWCASE
+   ==================================================== */
+.campaign-editorial-section {
+  max-width: 1320px;
+  margin: 40px auto 48px;
+  padding: 0 16px;
+}
 
+.campaign-editorial-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fbfaf8;
+  border: 1px solid #ebe8e2;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.campaign-editorial-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.campaign-editorial-media {
+  position: relative;
+  background: #2a2421;
+  min-height: 440px;
+  overflow: hidden;
+}
+
+.campaign-editorial-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.campaign-editorial-card:hover .campaign-editorial-img {
+  transform: scale(1.03);
+}
+
+.campaign-editorial-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(12, 13, 14, 0.88);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.campaign-editorial-content {
+  padding: 48px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.campaign-eyebrow {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8c7e6c;
+  margin-bottom: 12px;
+}
+
+.campaign-headline {
+  font-family: var(--font-brand);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.campaign-description {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #5a5957;
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+
+.campaign-perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.campaign-perk-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #e5e2da;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.campaign-perk-item i {
+  color: #8c7e6c;
+}
+
+.campaign-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-campaign-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0c0d0e;
+  color: #fff;
+  padding: 14px 26px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-campaign-primary:hover {
+  background: #252629;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-campaign-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #0c0d0e;
+  padding: 13px 22px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1.5px solid #0c0d0e;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-campaign-secondary:hover {
+  background: #0c0d0e;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .campaign-editorial-card {
+    grid-template-columns: 1fr;
+  }
+  .campaign-editorial-media {
+    min-height: 320px;
+    max-height: 400px;
+  }
+  .campaign-editorial-content {
+    padding: 32px 20px;
+  }
+  .campaign-headline {
+    font-size: 1.85rem;
+  }
+  .campaign-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-campaign-primary,
+  .btn-campaign-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

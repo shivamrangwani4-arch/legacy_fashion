@@ -264,6 +264,15 @@ function selectSize(size) {
   });
 }
 
+function openSizeGuideModal() {
+  const p = PDP_STATE.product;
+  if (p && p.gender === 'juniors') {
+    alert(`📏 LEGACY JUNIORS SIZING GUIDE (Age & Height):\n\n• 2-3Y:  Height 92-98 cm | Chest 53 cm\n• 3-4Y:  Height 98-104 cm | Chest 56 cm\n• 5-6Y:  Height 110-116 cm | Chest 60 cm\n• 7-8Y:  Height 122-128 cm | Chest 65 cm\n• 9-10Y: Height 134-140 cm | Chest 71 cm\n• 11-12Y: Height 146-152 cm | Chest 78 cm\n• 13-14Y: Height 158-164 cm | Chest 84 cm\n\nAll pieces designed with breathable comfort stretch and room for active growth.`);
+  } else {
+    alert(`📏 LEGACY ATELIER SIZING GUIDE (Men & Women):\n\n• XS: Chest 36-38" | Waist 28-30"\n• S:  Chest 38-40" | Waist 30-32"\n• M:  Chest 40-42" | Waist 32-34"\n• L:  Chest 42-44" | Waist 34-36"\n• XL: Chest 44-46" | Waist 36-38"\n\nAll garments tailored in signature relaxed luxury proportions.`);
+  }
+}
+
 function updatePriceDisplay() {
   const p = PDP_STATE.product;
   if (!p) return;

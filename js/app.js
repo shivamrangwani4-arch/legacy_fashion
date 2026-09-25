@@ -70,6 +70,14 @@ const HERO_SLIDES = [
     image: "./images/hero_slide_3.jpg",
     gender: "all",
     category: "gurkha-pants"
+  },
+  {
+    title: "BETWEEN SEASONS",
+    subtitle: "Legacy Juniors · FW26 Editorial Campaign",
+    cta: "Explore Juniors Collection",
+    image: "./images/juniors_campaign_ad.png",
+    gender: "juniors",
+    category: "all"
   }
 ];
 
@@ -203,7 +211,7 @@ function setGender(gender) {
     } else if (gender === 'women') {
       titleEl.textContent = "Women's Atelier Collection";
     } else if (gender === 'juniors') {
-      titleEl.textContent = "Juniors Streetwear";
+      titleEl.textContent = "Juniors Collection · Between Seasons";
     } else {
       titleEl.textContent = "Categories In Focus";
     }
@@ -312,17 +320,32 @@ function renderProductGrid() {
     products = products.filter(p => p.gender === STATE.currentGender);
   }
 
+  // Ensure that in 'all' view with 'all' category, the 4 iconic catalog starter items remain #1 - #4
+  if (STATE.currentGender === 'all' && STATE.currentCategory === 'all') {
+    const starterIds = ['leg-denim-01', 'leg-polo-01', 'leg-wide-01', 'leg-moto-01'];
+    const starters = [];
+    const others = [];
+    starterIds.forEach(id => {
+      const it = products.find(p => p.id === id);
+      if (it) starters.push(it);
+    });
+    products.forEach(p => {
+      if (!starterIds.includes(p.id)) others.push(p);
+    });
+    products = [...starters, ...others];
+  }
+
   // Filter by category
   if (STATE.currentCategory !== 'all') {
     if (STATE.currentCategory === 'tops') {
       products = products.filter(p => 
-        ['knit-polos', 'resort-shirts', 'shirts', 'motorsport'].includes(p.category) || 
-        p.subCategory === 'shirts' || p.subCategory === 'polos'
+        ['knit-polos', 'resort-shirts', 'shirts', 'motorsport', 'tops'].includes(p.category) || 
+        p.subCategory === 'shirts' || p.subCategory === 'polos' || p.subCategory === 't-shirts' || p.category === 'tops'
       );
     } else if (STATE.currentCategory === 'pants') {
       products = products.filter(p => 
-        ['denim', 'wideleg-pants', 'gurkha-pants', 'airflex-pants'].includes(p.category) || 
-        p.subCategory === 'trousers' || p.subCategory === 'jeans'
+        ['denim', 'wideleg-pants', 'gurkha-pants', 'airflex-pants', 'pants'].includes(p.category) || 
+        p.subCategory === 'trousers' || p.subCategory === 'jeans' || p.subCategory === 'wideleg-pants' || p.category === 'pants'
       );
     } else {
       products = products.filter(p => p.category === STATE.currentCategory || p.subCategory === STATE.currentCategory);

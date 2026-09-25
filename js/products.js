@@ -4,6 +4,483 @@
 
 const PRODUCTS_DATA = [
 {
+    "id": "leg-jun-01",
+    "name": "Junior Relaxed Linen Camp Shirt & Baggy Denim Set",
+    "brand": "LEGACY JUNIORS",
+    "gender": "juniors",
+    "category": "tops",
+    "subCategory": "shirts",
+    "price": 3690,
+    "originalPrice": 4600,
+    "tag": "EDITORIAL FLAGSHIP",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 20% OFF",
+    "rating": 5.0,
+    "reviews": 128,
+    "image": "./images/junior_boy_resort_streetwear.png",
+    "secondaryImage": "./images/junior_boy_resort_streetwear.png",
+    "colors": [
+        {
+            "name": "Optic White & Bleached Denim",
+            "code": "#f0f2f5"
+        }
+    ],
+    "sizes": [
+        "3-4Y",
+        "5-6Y",
+        "7-8Y",
+        "9-10Y",
+        "11-12Y"
+    ],
+    "description": "Flagship Juniors runway set featuring a breathable Cuban camp-collar button-down shirt paired with architectural loose-fit light wash denim pants. Comfortable all-day luxury streetwear for young trendsetters.",
+    "features": [
+        "100% Breathable Organic Cotton",
+        "Relaxed Cuban spread collar",
+        "Elastic-back adjustable waistband",
+        "Pre-washed buttery soft handfeel"
+    ]
+},
+{
+    "id": "leg-jun-02",
+    "name": "Daisy Micro-Embroidered Baggy Wide-Leg Denim",
+    "brand": "LEGACY JUNIORS",
+    "gender": "juniors",
+    "category": "denim",
+    "subCategory": "wideleg-pants",
+    "price": 3690,
+    "originalPrice": 4600,
+    "tag": "ATELIER DENIM",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 20% OFF",
+    "rating": 4.9,
+    "reviews": 84,
+    "image": "./images/junior_daisy_wideleg_jeans.png",
+    "secondaryImage": "./images/junior_daisy_wideleg_jeans.png",
+    "colors": [
+        {
+            "name": "Light Vintage Blue",
+            "code": "#8faec7"
+        }
+    ],
+    "sizes": [
+        "3-4Y",
+        "5-6Y",
+        "7-8Y",
+        "9-10Y",
+        "11-12Y"
+    ],
+    "description": "Comfortable wide-leg fit jeans with delicate scattered daisy floral embroidery. Features a flexible elasticated waistband and durable pure cotton denim wash.",
+    "features": [
+        "100% Ring-Spun Cotton Denim",
+        "Delicate floral contrast embroidery",
+        "Adjustable inner waist tab",
+        "Non-constricting relaxed wide leg"
+    ]
+},
+{
+    "id": "leg-jun-03",
+    "name": "Cropped Ruffle-Sleeve Embellished Cherry Top",
+    "brand": "LEGACY JUNIORS",
+    "gender": "juniors",
+    "category": "tops",
+    "subCategory": "t-shirts",
+    "price": 2490,
+    "originalPrice": 3100,
+    "tag": "GIRLS TODDLER",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 20% OFF",
+    "rating": 4.9,
+    "reviews": 67,
+    "image": "./images/junior_cropped_cherry_tee.png",
+    "secondaryImage": "./images/junior_cropped_cherry_tee.png",
+    "colors": [
+        {
+            "name": "Pastel Mint",
+            "code": "#c2e2d2"
+        }
+    ],
+    "sizes": [
+        "2-3Y",
+        "4-5Y",
+        "6-7Y",
+        "8-9Y"
+    ],
+    "description": "Sweet pastel mint cropped silhouette with subtle shoulder ruffles and embroidered cherry patch on chest. Soft combed cotton jersey.",
+    "features": [
+        "100% Combed Cotton Jersey",
+        "Embroidered 3D cherry accent",
+        "Soft ruffle shoulder detailing",
+        "Hypoallergenic dyes"
+    ]
+},
+{
+    "id": "leg-jun-04",
+    "name": "Polka-Dot 'Always Cute' French Rib Long-Sleeve",
+    "brand": "LEGACY JUNIORS",
+    "gender": "juniors",
+    "category": "tops",
+    "subCategory": "t-shirts",
+    "price": 2490,
+    "originalPrice": 3100,
+    "tag": "TODDLER ATELIER",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 20% OFF",
+    "rating": 4.8,
+    "reviews": 53,
+    "image": "./images/junior_polka_dot_tee.png",
+    "secondaryImage": "./images/junior_polka_dot_tee.png",
+    "colors": [
+        {
+            "name": "Navy & Vanilla Dot",
+            "code": "#1b2838"
+        }
+    ],
+    "sizes": [
+        "2-3Y",
+        "4-5Y",
+        "6-7Y",
+        "8-9Y"
+    ],
+    "description": "Deep navy long-sleeve tee with vintage cream polka-dot motif and coral script embroidery. Relaxed toddler fit with stretch collar.",
+    "features": [
+        "Super-stretch cotton modal",
+        "Durable pigment-print dots",
+        "Contrast chain-stitched lettering",
+        "Ribbed comfort cuffs"
+    ]
+},
+{
+    "id": "leg-jun-05",
+    "name": "Botanical Bouquet Embroidered French Terry Sweatshirt",
+    "brand": "LEGACY JUNIORS",
+    "gender": "juniors",
+    "category": "tops",
+    "subCategory": "activewear",
+    "price": 2890,
+    "originalPrice": 3600,
+    "tag": "LUXURY FLEECE",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 20% OFF",
+    "rating": 5.0,
+    "reviews": 72,
+    "image": "./images/junior_mint_flower_sweatshirt.png",
+    "secondaryImage": "./images/junior_mint_flower_sweatshirt.png",
+    "colors": [
+        {
+            "name": "Sage Mint",
+            "code": "#b5d8c3"
+        }
+    ],
+    "sizes": [
+        "3-4Y",
+        "5-6Y",
+        "7-8Y",
+        "9-10Y"
+    ],
+    "description": "Warm and cozy brushed French terry sweatshirt featuring a colorful embroidered ribbon-tied floral bouquet. Pre-shrunk for effortless laundering.",
+    "features": [
+        "340 GSM Brushed French Terry",
+        "High-density multi-color floral embroidery",
+        "Ribbed hem and cuffs",
+        "Gentle skin-friendly interior"
+    ]
+},
+{
+    "id": "leg-jun-06",
+    "name": "Drop-Shoulder Character Bunny Summer Boxy Tee",
+    "brand": "LEGACY JUNIORS",
+    "gender": "juniors",
+    "category": "tops",
+    "subCategory": "t-shirts",
+    "price": 2490,
+    "originalPrice": 3100,
+    "tag": "POP ATELIER",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 20% OFF",
+    "rating": 4.9,
+    "reviews": 61,
+    "image": "./images/junior_yellow_graphic_tee.png",
+    "secondaryImage": "./images/junior_yellow_graphic_tee.png",
+    "colors": [
+        {
+            "name": "Buttercup Yellow",
+            "code": "#f7d969"
+        }
+    ],
+    "sizes": [
+        "2-3Y",
+        "4-5Y",
+        "6-7Y",
+        "8-9Y"
+    ],
+    "description": "Sunshine yellow relaxed boxy tee with cute knot-sleeve details and playful bunny graphic print. Lightweight summer staple.",
+    "features": [
+        "100% Breathable Featherweight Cotton",
+        "Cute shoulder tie accents",
+        "Silk-screened soft feel graphic",
+        "Roomy boxy cut"
+    ]
+},
+{
+    "id": "leg-jun-07",
+    "name": "Allover Blossom Embroidered Relaxed Wide-Leg Jeans",
+    "brand": "LEGACY JUNIORS",
+    "gender": "juniors",
+    "category": "denim",
+    "subCategory": "wideleg-pants",
+    "price": 3690,
+    "originalPrice": 4600,
+    "tag": "ATELIER DENIM",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 20% OFF",
+    "rating": 4.9,
+    "reviews": 95,
+    "image": "./images/junior_floral_wideleg_jeans.png",
+    "secondaryImage": "./images/junior_floral_wideleg_jeans.png",
+    "colors": [
+        {
+            "name": "Sky Denim Floral",
+            "code": "#7ca2c4"
+        }
+    ],
+    "sizes": [
+        "3-4Y",
+        "5-6Y",
+        "7-8Y",
+        "9-10Y",
+        "11-12Y"
+    ],
+    "description": "Medium indigo wide-leg jeans covered in hand-stitched style pink blossom embroidery. Soft enzyme washed for a gentle drape.",
+    "features": [
+        "Pure Cotton Enzyme Washed Denim",
+        "Allover pink petal micro-embroidery",
+        "Relaxed fluid silhouette",
+        "Hidden buttonhole elastic adjustments"
+    ]
+},
+{
+    "id": "leg-jun-08",
+    "name": "Pop Art Mascot Patch Relaxed Straight-Leg Denim",
+    "brand": "LEGACY JUNIORS",
+    "gender": "juniors",
+    "category": "denim",
+    "subCategory": "wideleg-pants",
+    "price": 3690,
+    "originalPrice": 4600,
+    "tag": "STREETWEAR",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 20% OFF",
+    "rating": 4.8,
+    "reviews": 77,
+    "image": "./images/junior_patch_wideleg_jeans.png",
+    "secondaryImage": "./images/junior_patch_wideleg_jeans.png",
+    "colors": [
+        {
+            "name": "Classic Indigo",
+            "code": "#4c6b8b"
+        }
+    ],
+    "sizes": [
+        "4-5Y",
+        "6-7Y",
+        "8-9Y",
+        "10-11Y",
+        "12-13Y"
+    ],
+    "description": "Authentic 5-pocket denim pants featuring an exclusive pop art mascot embroidery patch on the lower right leg.",
+    "features": [
+        "Heavyweight 11oz durable cotton denim",
+        "Tactile embroidered graphic patch",
+        "Reinforced bar-tack stitching",
+        "Signature Legacy leather waistband patch"
+    ]
+},
+{
+    "id": "leg-jun-09",
+    "name": "Botanical Bud All-Over Print Acid-Wash Baggy Jeans",
+    "brand": "LEGACY JUNIORS",
+    "gender": "juniors",
+    "category": "denim",
+    "subCategory": "wideleg-pants",
+    "price": 3690,
+    "originalPrice": 4600,
+    "tag": "ARCHIVE DENIM",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 20% OFF",
+    "rating": 4.9,
+    "reviews": 82,
+    "image": "./images/junior_printed_baggy_jeans.png",
+    "secondaryImage": "./images/junior_printed_baggy_jeans.png",
+    "colors": [
+        {
+            "name": "Acid Cloud Blue",
+            "code": "#98b9d6"
+        }
+    ],
+    "sizes": [
+        "4-5Y",
+        "6-7Y",
+        "8-9Y",
+        "10-11Y",
+        "12-13Y"
+    ],
+    "description": "Trend-forward acid wash light denim featuring an all-over floral rosebud pattern. Wide relaxed cut engineered for freedom of movement.",
+    "features": [
+        "Subtle acid bleach wash",
+        "Precision all-over print",
+        "Comfort stretch waistband",
+        "Durable twin-needle construction"
+    ]
+},
+{
+    "id": "leg-jun-10",
+    "name": "'Snowy State Est. 1996' Ribbed Crewneck Long-Sleeve",
+    "brand": "LEGACY JUNIORS",
+    "gender": "juniors",
+    "category": "tops",
+    "subCategory": "t-shirts",
+    "price": 2490,
+    "originalPrice": 3100,
+    "tag": "BOYS JUNIOR",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 20% OFF",
+    "rating": 4.9,
+    "reviews": 89,
+    "image": "./images/junior_snowy_state_longsleeve.png",
+    "secondaryImage": "./images/junior_snowy_state_longsleeve.png",
+    "colors": [
+        {
+            "name": "Ecru Cream & Sky Blue",
+            "code": "#f4f1ea"
+        }
+    ],
+    "sizes": [
+        "6-7Y",
+        "8-9Y",
+        "10-11Y",
+        "12-13Y",
+        "14-15Y"
+    ],
+    "description": "Collegiate varsity style ecru long-sleeve tee featuring athletic 'SNOWY STATE' typography and red varsity felt patch. Breathable cotton interlock.",
+    "features": [
+        "100% Interlock Cotton Knit",
+        "Collegiate arch lettering & badge",
+        "Ribbed collar and cuffs",
+        "Fade-resistant pigment color"
+    ]
+},
+{
+    "id": "leg-jun-11",
+    "name": "'Snow Spirit' Winter Expedition Graphic Long-Sleeve",
+    "brand": "LEGACY JUNIORS",
+    "gender": "juniors",
+    "category": "tops",
+    "subCategory": "t-shirts",
+    "price": 2490,
+    "originalPrice": 3100,
+    "tag": "BOYS JUNIOR",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 20% OFF",
+    "rating": 4.8,
+    "reviews": 74,
+    "image": "./images/junior_snow_spirit_longsleeve.png",
+    "secondaryImage": "./images/junior_snow_spirit_longsleeve.png",
+    "colors": [
+        {
+            "name": "Charcoal Slate",
+            "code": "#2d3136"
+        }
+    ],
+    "sizes": [
+        "6-7Y",
+        "8-9Y",
+        "10-11Y",
+        "12-13Y",
+        "14-15Y"
+    ],
+    "description": "Deep charcoal long-sleeve graphic top with vibrant ski character illustration. Tough everyday wear with ultra-soft handfeel.",
+    "features": [
+        "Durable heavy combed cotton",
+        "High-contrast silk-screen print",
+        "Reinforced neck binding",
+        "Easy machine washable"
+    ]
+},
+{
+    "id": "leg-jun-12",
+    "name": "Hero Edition Spider-Man Graphic Heavyweight Long-Sleeve",
+    "brand": "LEGACY JUNIORS",
+    "gender": "juniors",
+    "category": "tops",
+    "subCategory": "t-shirts",
+    "price": 2690,
+    "originalPrice": 3350,
+    "tag": "HERO ARCHIVE",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 Fan Favorite",
+    "rating": 5.0,
+    "reviews": 145,
+    "image": "./images/junior_spiderman_graphic_longsleeve.png",
+    "secondaryImage": "./images/junior_spiderman_graphic_longsleeve.png",
+    "colors": [
+        {
+            "name": "Mocha Warm Brown",
+            "code": "#5d4e46"
+        }
+    ],
+    "sizes": [
+        "6-7Y",
+        "8-9Y",
+        "10-11Y",
+        "12-13Y",
+        "14-15Y"
+    ],
+    "description": "Tonal earthy mocha crewneck long-sleeve featuring an iconic comic-art Spider-Man mask graphic print. Heavyweight 240 GSM combed jersey.",
+    "features": [
+        "240 GSM Premium Combed Cotton",
+        "High-detail Spider-Man comic artwork",
+        "Ribbed cuffs for comfortable fit",
+        "Side seam red tab label"
+    ]
+},
+{
+    "id": "leg-jun-13",
+    "name": "Minimalist Boxy Cut Combed Cotton Tee // DUSTY BLUE",
+    "brand": "LEGACY JUNIORS",
+    "gender": "juniors",
+    "category": "tops",
+    "subCategory": "t-shirts",
+    "price": 2190,
+    "originalPrice": 2750,
+    "tag": "ESSENTIAL ATELIER",
+    "isAiGenerated": false,
+    "badge": "New Arrival \u00b7 Essential",
+    "rating": 4.9,
+    "reviews": 110,
+    "image": "./images/junior_minimal_steel_blue_tee.png",
+    "secondaryImage": "./images/junior_minimal_steel_blue_tee.png",
+    "colors": [
+        {
+            "name": "Dusty Steel Blue",
+            "code": "#4c6e8d"
+        }
+    ],
+    "sizes": [
+        "6-7Y",
+        "8-9Y",
+        "10-11Y",
+        "12-13Y",
+        "14-15Y"
+    ],
+    "description": "Minimalist drop-shoulder boxy tee in signature dusty steel blue. Pairs seamlessly with wide-leg denim and cargo pants.",
+    "features": [
+        "100% Combed Single-Jersey Cotton",
+        "Subtle micro-ribbed crew collar",
+        "Relaxed boxy silhouette",
+        "Anti-shrink pre-wash"
+    ]
+},
+{
     "id": "leg-men-01",
     "name": "Milano Contrast-Tipped Fine-Gauge Knit Polo",
     "brand": "LEGACY",
