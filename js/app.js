@@ -20,6 +20,7 @@ const CATEGORY_NAMES = {
 const STATE = {
   currentGender: 'men', // Only MEN, WOMEN, JUNIORS (No ALL)
   currentCategory: 'all',
+  currentSort: 'featured', // 'featured' | 'price-low-high' | 'price-high-low' | 'rating'
   cart: JSON.parse(localStorage.getItem('legacy_cart') || '[]'),
   wishlist: JSON.parse(localStorage.getItem('legacy_wishlist') || '[]'),
   activeHeroIndex: 0,
@@ -290,6 +291,27 @@ function setCategory(category) {
   renderProductGrid();
 }
 
+function setSort(sortType) {
+  STATE.currentSort = sortType;
+
+  // Update sort pills active styling
+  document.querySelectorAll('.sort-pill-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-sort') === sortType);
+  });
+
+  renderProductGrid();
+
+  if (sortType === 'price-low-high') {
+    showToast('Sorted: Price Low to High');
+  } else if (sortType === 'price-high-low') {
+    showToast('Sorted: Price High to Low');
+  } else if (sortType === 'rating') {
+    showToast('Sorted: Highest Rated');
+  } else {
+    showToast('Sorted: Featured Collection');
+  }
+}
+
 // ----------------------------------------------------
 // 3. Product Grid Rendering
 // ----------------------------------------------------
@@ -301,7 +323,8 @@ function renderProductGrid() {
   const gridContainer = document.getElementById('productGrid');
   if (!gridContainer) return;
 
-  let products = PRODUCTS_DATA;
+  // Shallow copy so sorting does not mutate original array
+  let products = [...PRODUCTS_DATA];
 
   // Strict Filter by gender: MEN, WOMEN, or JUNIORS ONLY (No ALL)
   const activeGender = ['men', 'women', 'juniors'].includes(STATE.currentGender) ? STATE.currentGender : 'men';
@@ -325,12 +348,32 @@ function renderProductGrid() {
     }
   }
 
-  // Count update
+  // Sorting: Low to High, High to Low, Rating, Featured
+  if (STATE.currentSort === 'price-low-high') {
+    products.sort((a, b) => a.price - b.price);
+  } else if (STATE.currentSort === 'price-high-low') {
+    products.sort((a, b) => b.price - a.price);
+  } else if (STATE.currentSort === 'rating') {
+    products.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+  }
+
+  // Count & Sort Status Update
   const countBadge = document.getElementById('itemCountText');
+  const sortInfo = document.getElementById('catalogSortInfo');
+  const genderLabel = `${STATE.currentGender.toUpperCase()}'s Collection`;
+  const categoryLabel = CATEGORY_NAMES[STATE.currentCategory] || 'Items';
+
   if (countBadge) {
-    const genderLabel = `${STATE.currentGender.toUpperCase()}'s Collection`;
-    const categoryLabel = CATEGORY_NAMES[STATE.currentCategory] || 'Items';
     countBadge.textContent = `Showing ${products.length} Products in ${genderLabel} (${categoryLabel}) · Cash on Delivery Available Across Pakistan`;
+  }
+
+  if (sortInfo) {
+    let sortName = 'Featured';
+    if (STATE.currentSort === 'price-low-high') sortName = 'Price: Low to High (Lowest First)';
+    if (STATE.currentSort === 'price-high-low') sortName = 'Price: High to Low (Luxury First)';
+    if (STATE.currentSort === 'rating') sortName = 'Highest Rated';
+
+    sortInfo.innerHTML = `Showing <strong>${products.length} Pieces</strong> · Sorted: <strong>${sortName}</strong>`;
   }
 
   if (products.length === 0) {
